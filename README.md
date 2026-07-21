@@ -1,12 +1,12 @@
 # Portal ECLL — Versão 0.8 revisada
 
-Atualizações incluídas:
+Atualizações:
 
 - Agenda inteligente.
 - Correção da visualização no celular.
 - Logo ampliada.
 - Galeria do I Circuito Sankofa com 20 fotografias.
-- Fotos otimizadas em WebP para melhorar o carregamento.
-- Galeria responsiva em mosaico.
-- Visualização ampliada em tela cheia com setas e teclado.
-- Área preparada para receber o link público do álbum no Google Drive.
+- Correção da orientação das fotografias que estavam de lado.
+- Visualização ampliada em tela cheia.
+- Dois botões para os álbuns completos no Google Fotos.
+- Botão “Veja as fotos do evento” no I Circuito Sankofa, em Eventos Realizados.

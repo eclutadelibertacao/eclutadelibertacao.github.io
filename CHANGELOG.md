@@ -1,5 +1,11 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.8 — Links e orientação das fotos
+
+- Correção da orientação das fotografias que apareciam de lado.
+- Inclusão de dois links para os álbuns completos no Google Fotos.
+- Inclusão do botão “Veja as fotos do evento” no I Circuito Sankofa, na seção Eventos Realizados.
+
 ## Versão 0.8 — Galeria do I Circuito Sankofa
 
 - Inclusão de 20 fotografias do I Circuito Sankofa.
