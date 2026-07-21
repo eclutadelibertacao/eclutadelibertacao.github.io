@@ -1,5 +1,12 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.9 — Capas internas mais compactas
+
+- Redução do espaçamento vertical das capas internas.
+- Limitação da largura útil do conteúdo para 1120 px.
+- Redução proporcional do título e do texto introdutório.
+- Ajuste mobile para uma abertura mais harmoniosa.
+
 ## Versão 0.9 — Ampliação estrutural da logo
 
 - Ampliação estrutural da logo institucional da ECLL no cabeçalho, removendo limitações do layout e aumentando sua presença visual.

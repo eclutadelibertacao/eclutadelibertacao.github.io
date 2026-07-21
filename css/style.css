@@ -21,10 +21,10 @@ footer{background:var(--preto);color:white;padding:28px max(24px,calc((100% - va
 .topo-solido{background:var(--azul)}
 .pagina-interna main{padding-top:118px;min-height:70vh}
 .menu a.ativo{color:var(--ouro)}
-.capa-interna{padding:90px max(24px,calc((100% - var(--largura))/2));background:linear-gradient(135deg,var(--azul),var(--royal));color:white}
+.capa-interna{padding:56px max(24px,calc((100% - 1120px)/2));background:linear-gradient(135deg,var(--azul),var(--royal));color:white;min-height:auto;}
 .capa-interna span{color:var(--ouro);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:3px}
-.capa-interna h1{font:400 clamp(46px,7vw,78px)/1 Georgia,serif;text-transform:uppercase;margin:8px 0 14px}
-.capa-interna p{max-width:760px;font-size:18px}
+.capa-interna h1{font:400 clamp(42px,5vw,66px)/1 Georgia,serif;text-transform:uppercase;margin:6px 0 12px;}
+.capa-interna p{max-width:680px;font-size:17px;line-height:1.55;}
 .atalhos-paginas{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .atalhos-paginas a{background:var(--azul);color:white;padding:26px;border-bottom:5px solid var(--ouro);display:flex;flex-direction:column;gap:8px}
 .atalhos-paginas strong{color:var(--ouro);text-transform:uppercase}
@@ -1282,5 +1282,20 @@ header .container,
 
   .pagina-interna main{
     padding-top:126px !important;
+  }
+}
+
+
+@media(max-width:640px){
+  .capa-interna{
+    padding:38px 22px 42px;
+  }
+  .capa-interna h1{
+    font-size:42px;
+    margin-top:5px;
+  }
+  .capa-interna p{
+    max-width:100%;
+    font-size:16px;
   }
 }

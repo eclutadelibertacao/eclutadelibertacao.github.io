@@ -1,11 +1,9 @@
 # Portal ECLL — Versão 0.9 revisada
 
-Atualizações desta versão:
+Ajuste visual das páginas internas:
 
-- Nova fotografia no painel principal da Home.
-- Enquadramento ajustado para destacar o centro da roda e os dois capoeiristas.
-- Logo da ECLL ampliada em aproximadamente 50%.
-- Ajustes responsivos no cabeçalho para desktop, tablet e celular.
-- Seção do Mestre Canário mantida e reposicionada após a apresentação da Escola.
-- Foto e conteúdo do Mestre Canário reduzidos para uma seção mais compacta.
-- Identidade visual, agenda, notícias, galeria, links e automações preservados.
+- Redução da altura do painel de abertura.
+- Conteúdo limitado a uma largura mais equilibrada.
+- Título e texto redimensionados para evitar excesso de espaço vazio.
+- Ajuste responsivo específico para celular.
+- Cabeçalho, logo e demais conteúdos preservados.
