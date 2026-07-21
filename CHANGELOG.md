@@ -1,5 +1,14 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.8 — Eventos em destaque na Home
+
+- Inclusão de um banner dedicado ao próximo evento na página inicial.
+- Destaque do II Circuito Sankofa com cartaz e informações completas.
+- Inclusão de botões para detalhes e cartaz oficial.
+- Inclusão de cartões menores para o III e IV Circuitos Sankofa.
+- Inclusão de acesso direto à agenda completa.
+- Ajustes responsivos para celular.
+
 ## Versão 0.8 — Links e orientação das fotos
 
 - Correção da orientação das fotografias que apareciam de lado.
