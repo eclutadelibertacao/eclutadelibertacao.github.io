@@ -1,5 +1,14 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.9 — Notícias e comunicação
+
+- Criação de feed cronológico na página Notícias.
+- Inclusão das primeiras quatro reportagens e publicações.
+- Inclusão das três últimas notícias na Home.
+- Cards compactos para evitar excesso de espaço.
+- Redução do banner de próximo evento na página inicial.
+- Remoção de classificações por tipo de conteúdo.
+
 ## Versão 0.8 — Banner e inscrições automáticas
 
 - Banner da Home atualizado automaticamente conforme a data dos eventos.
