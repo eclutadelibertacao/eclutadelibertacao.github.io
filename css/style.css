@@ -1183,3 +1183,104 @@ header .container,
     max-width:100%;
   }
 }
+
+/* Atualização específica do cabeçalho — ampliação estrutural da logo ECLL */
+.topo{
+  grid-template-columns:190px minmax(0,1fr) auto !important;
+  min-height:196px !important;
+  height:196px !important;
+  gap:18px !important;
+  overflow:visible !important;
+}
+
+.marca{
+  width:190px !important;
+  min-width:190px !important;
+  max-width:none !important;
+  height:180px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  flex:0 0 190px !important;
+  overflow:visible !important;
+}
+
+.marca img{
+  width:auto !important;
+  height:180px !important;
+  max-width:190px !important;
+  max-height:none !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  flex:0 0 auto !important;
+}
+
+.pagina-interna main{
+  padding-top:196px !important;
+}
+
+@media(max-width:980px){
+  .topo{
+    grid-template-columns:155px minmax(0,1fr) auto !important;
+    min-height:160px !important;
+    height:160px !important;
+  }
+
+  .marca{
+    width:155px !important;
+    min-width:155px !important;
+    height:148px !important;
+    flex-basis:155px !important;
+  }
+
+  .marca img{
+    width:auto !important;
+    height:148px !important;
+    max-width:155px !important;
+  }
+
+  .menu{
+    top:158px !important;
+  }
+
+  .pagina-interna main{
+    padding-top:160px !important;
+  }
+}
+
+@media(max-width:640px){
+  .topo{
+    grid-template-columns:118px minmax(0,1fr) auto !important;
+    min-height:126px !important;
+    height:126px !important;
+    padding:6px 18px !important;
+    gap:10px !important;
+  }
+
+  .marca{
+    width:118px !important;
+    min-width:118px !important;
+    height:114px !important;
+    flex-basis:118px !important;
+  }
+
+  .marca img{
+    width:auto !important;
+    height:114px !important;
+    max-width:118px !important;
+  }
+
+  .menu-botao{
+    justify-self:end !important;
+    position:relative !important;
+    z-index:30 !important;
+  }
+
+  .menu{
+    top:124px !important;
+  }
+
+  .pagina-interna main{
+    padding-top:126px !important;
+  }
+}

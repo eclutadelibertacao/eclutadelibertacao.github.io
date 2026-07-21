@@ -1,5 +1,9 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.9 — Ampliação estrutural da logo
+
+- Ampliação estrutural da logo institucional da ECLL no cabeçalho, removendo limitações do layout e aumentando sua presença visual.
+
 ## Versão 0.9 — Home, logo e seção Mestre Canário
 
 - Substituição da imagem principal da Home pela fotografia da roda de capoeira.
