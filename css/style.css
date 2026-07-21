@@ -987,3 +987,199 @@ html, body{
 .biografia-atualizacao p{margin-top:4px;color:#f4f6fa;font-size:14px}
 @media(max-width:850px){.mestre-canario-grade{grid-template-columns:1fr;gap:32px}.mestre-canario-foto{width:min(100%,430px);margin-inline:auto}}
 @media(max-width:600px){.mestre-canario-infos{grid-template-columns:1fr}.mestre-canario-subtitulo{font-size:16px}}
+
+
+/* Atualização: novo painel da Home, logo ampliada e seção Mestre Canário mais compacta */
+
+/* Nova fotografia principal da Home */
+.hero,
+.hero-home,
+.banner-principal,
+.capa-home{
+  --home-hero-image: url("../images/banner/home-roda-capoeira.jpg");
+}
+
+.hero::before,
+.hero-home::before,
+.banner-principal::before,
+.capa-home::before{
+  background-image:
+    linear-gradient(90deg, rgba(4,20,48,.88) 0%, rgba(4,20,48,.60) 38%, rgba(4,20,48,.18) 68%, rgba(4,20,48,.08) 100%),
+    var(--home-hero-image) !important;
+  background-size: cover !important;
+  background-position: center 43% !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Caso o banner use background diretamente na seção */
+.hero,
+.hero-home,
+.banner-principal,
+.capa-home{
+  background-image:
+    linear-gradient(90deg, rgba(4,20,48,.88) 0%, rgba(4,20,48,.60) 38%, rgba(4,20,48,.18) 68%, rgba(4,20,48,.08) 100%),
+    var(--home-hero-image) !important;
+  background-size: cover !important;
+  background-position: center 43% !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Logo ECLL cerca de 50% maior, sem deformação */
+.logo img,
+.site-logo img,
+.cabecalho-logo img,
+.header-logo img{
+  width: auto !important;
+  height: clamp(84px, 8vw, 126px) !important;
+  max-width: min(26vw, 190px) !important;
+  object-fit: contain !important;
+}
+
+.logo,
+.site-logo,
+.cabecalho-logo,
+.header-logo{
+  display:flex;
+  align-items:center;
+  flex:0 0 auto;
+}
+
+header .container,
+.cabecalho .container,
+.site-header .container{
+  min-height: clamp(96px, 10vw, 138px);
+}
+
+/* Seção Mestre Canário mais compacta */
+.mestre-canario{
+  padding-top: 56px !important;
+  padding-bottom: 56px !important;
+}
+
+.mestre-canario-grade{
+  grid-template-columns: minmax(210px, 300px) 1fr !important;
+  gap: 38px !important;
+  align-items: center !important;
+}
+
+.mestre-canario-foto{
+  width: 100%;
+  max-width: 300px;
+  margin-inline: auto;
+}
+
+.mestre-canario-foto img{
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.mestre-canario-texto{
+  gap: 10px !important;
+  margin-top: 18px !important;
+}
+
+.mestre-canario-texto p{
+  font-size: 15px !important;
+  line-height: 1.62 !important;
+}
+
+.mestre-canario-infos{
+  margin-top: 20px !important;
+  gap: 10px !important;
+}
+
+.mestre-canario-infos div{
+  padding: 12px 14px !important;
+}
+
+.biografia-atualizacao{
+  margin-top: 18px !important;
+  padding: 14px 16px !important;
+}
+
+@media (max-width: 900px){
+  .logo img,
+  .site-logo img,
+  .cabecalho-logo img,
+  .header-logo img{
+    height: clamp(74px, 11vw, 100px) !important;
+    max-width: 160px !important;
+  }
+
+  header .container,
+  .cabecalho .container,
+  .site-header .container{
+    min-height: 102px;
+  }
+
+  .mestre-canario-grade{
+    grid-template-columns: minmax(190px, 250px) 1fr !important;
+    gap: 28px !important;
+  }
+
+  .mestre-canario-foto{
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 700px){
+  html, body{
+    overflow-x:hidden;
+  }
+
+  .logo img,
+  .site-logo img,
+  .cabecalho-logo img,
+  .header-logo img{
+    height: 88px !important;
+    width: auto !important;
+    max-width: 132px !important;
+  }
+
+  header .container,
+  .cabecalho .container,
+  .site-header .container{
+    min-height: 108px;
+    padding-inline: 18px;
+  }
+
+  .menu-toggle,
+  .hamburger,
+  .botao-menu{
+    position: relative;
+    z-index: 20;
+    flex:0 0 auto;
+  }
+
+  .hero,
+  .hero-home,
+  .banner-principal,
+  .capa-home,
+  .hero::before,
+  .hero-home::before,
+  .banner-principal::before,
+  .capa-home::before{
+    background-position: 53% center !important;
+  }
+
+  .mestre-canario{
+    padding-top: 44px !important;
+    padding-bottom: 44px !important;
+  }
+
+  .mestre-canario-grade{
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .mestre-canario-foto{
+    width: min(78%, 240px) !important;
+    max-width: 240px !important;
+  }
+
+  .mestre-canario-conteudo{
+    width:100%;
+    max-width:100%;
+  }
+}

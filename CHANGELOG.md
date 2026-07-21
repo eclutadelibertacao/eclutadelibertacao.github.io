@@ -1,5 +1,14 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.9 — Home, logo e seção Mestre Canário
+
+- Substituição da imagem principal da Home pela fotografia da roda de capoeira.
+- Melhoria do enquadramento e manutenção do degradê para legibilidade.
+- Ampliação da logo da ECLL em aproximadamente 50%.
+- Ajustes responsivos no cabeçalho e na página inicial.
+- Reposicionamento da seção Mestre Canário após a apresentação da Escola.
+- Redução da fotografia e dos espaçamentos da seção Mestre Canário.
+
 ## Versão 0.9 — Seção Mestre Canário
 
 - Inclusão da seção institucional do Mestre Canário.
