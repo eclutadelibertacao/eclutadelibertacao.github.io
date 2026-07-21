@@ -1,134 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portal Oficial da Escola de Capoeira Luta de Libertação — ECLL.">
-  <title>ECLL | Escola de Capoeira Luta de Libertação</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Portal Oficial da Escola de Capoeira Luta de Libertação.">
+<meta name="theme-color" content="#071f4a">
+<title>ECLL | Escola de Capoeira Luta de Libertação</title>
+<link rel="icon" href="images/logos/logo-principal.png">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="cabecalho">
-    <a class="marca" href="#inicio" aria-label="Página inicial da ECLL">
-      <div class="logo-provisoria">ECLL</div>
-      <div>
-        <span>Escola de Capoeira</span>
-        <strong>Luta de Libertação</strong>
-      </div>
-    </a>
+<header>
+  <a class="brand" href="#inicio">
+    <img src="images/logos/logo-branca.png" alt="Logo ECLL">
+    <div><small>Escola de Capoeira</small><strong>Luta de Libertação</strong></div>
+  </a>
+  <button id="menuBtn" aria-label="Abrir menu">☰</button>
+  <nav id="menu">
+    <a href="#inicio">Início</a><a href="#escola">A Escola</a><a href="#agenda">Agenda</a>
+    <a href="#eventos">Eventos</a><a href="#galeria">Galeria</a><a href="#midia">Na mídia</a><a href="#contato">Contato</a>
+  </nav>
+  <a class="join" href="#contato">Faça parte</a>
+</header>
 
-    <button class="menu-botao" aria-label="Abrir menu" aria-expanded="false">☰</button>
+<main>
+<section class="hero" id="inicio">
+  <div class="shade"></div>
+  <div class="heroText">
+    <span>Escola de Capoeira</span>
+    <h1>Patrimônio.<b>Resistência.</b>Liberdade.</h1>
+    <p>Formando cidadãos através da cultura, da disciplina, da educação e do respeito às tradições da capoeira.</p>
+    <div class="actions">
+      <a class="btn gold" href="#escola">Conheça nossa história</a>
+      <a class="btn outline" href="#agenda">Agenda de eventos</a>
+    </div>
+  </div>
+  <div class="quick">
+    <div><small>Aulas</small><strong>Crianças, jovens e adultos</strong></div>
+    <div><small>Localização</small><strong>Manaus — Amazonas</strong></div>
+    <div><small>Contato</small><strong>WhatsApp oficial</strong></div>
+    <div><small>Redes sociais</small><strong>Instagram da ECLL</strong></div>
+  </div>
+</section>
 
-    <nav class="menu">
-      <a href="#inicio">Início</a>
-      <a href="#escola">A Escola</a>
-      <a href="#agenda">Agenda</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#midia">Na mídia</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+<section class="section" id="escola">
+  <div class="title"><span>Nossa identidade</span><h2>A Escola</h2></div>
+  <div class="two">
+    <div>
+      <p>A Escola de Capoeira Luta de Libertação é um espaço de formação, cultura, memória e convivência. Sua atuação reúne crianças, jovens e adultos em torno da prática da capoeira e dos valores que sustentam sua trajetória.</p>
+      <p>Este portal foi criado para preservar a história da escola, divulgar eventos, organizar o acervo e aproximar alunos, famílias, parceiros, pesquisadores e comunidade.</p>
+    </div>
+    <div class="values">
+      <article><b>Tradição</b><span>Memória e fundamentos.</span></article>
+      <article><b>Educação</b><span>Formação cidadã.</span></article>
+      <article><b>Comunidade</b><span>União e pertencimento.</span></article>
+      <article><b>Liberdade</b><span>Consciência e transformação.</span></article>
+    </div>
+  </div>
+</section>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-conteudo">
-        <span class="subtitulo">Capoeira Angola</span>
-        <h1>Patrimônio, resistência e <em>liberdade</em></h1>
-        <p>Tradição, educação, ancestralidade e transformação social por meio da capoeira.</p>
-        <div class="acoes">
-          <a class="botao botao-ouro" href="#escola">Conheça nossa história</a>
-          <a class="botao botao-contorno" href="#agenda">Ver agenda</a>
-        </div>
-      </div>
-    </section>
+<section class="section light" id="agenda">
+  <div class="title center"><span>Programação</span><h2>Agenda</h2></div>
+  <div class="cards">
+    <article><em>Em breve</em><h3>Roda de Capoeira</h3><p>Data, horário e local serão atualizados nesta área.</p></article>
+    <article><em>Em breve</em><h3>Vivência Cultural</h3><p>Atividades com convidados e integrantes da escola.</p></article>
+    <article><em>Em breve</em><h3>Batizado e Graduação</h3><p>Informações oficiais e inscrições serão publicadas aqui.</p></article>
+  </div>
+</section>
 
-    <section class="atalhos">
-      <article><strong>Próximo evento</strong><span>Em breve</span></article>
-      <article><strong>Aulas</strong><span>Horários a confirmar</span></article>
-      <article><strong>Onde estamos</strong><span>Manaus — Amazonas</span></article>
-      <article><strong>Fale conosco</strong><span>WhatsApp da ECLL</span></article>
-    </section>
+<section class="section darkrow" id="eventos">
+  <div><span>Próximo destaque</span><h2>Eventos</h2><p>Cartazes, datas, horários, locais, convidados e registros de cada evento da ECLL.</p></div>
+  <a class="btn gold" href="#contato">Acompanhar novidades</a>
+</section>
 
-    <section class="secao duas-colunas" id="escola">
-      <div>
-        <span class="rotulo">Nossa trajetória</span>
-        <h2>A Escola</h2>
-        <p>A Escola de Capoeira Luta de Libertação preserva e transmite os fundamentos da Capoeira Angola, valorizando a cultura popular, a ancestralidade e a formação cidadã.</p>
-        <p>Este espaço será o portal oficial da escola, reunindo sua história, agenda, eventos, reportagens, fotografias e acervo cultural.</p>
-      </div>
-      <div class="cartao-destaque">
-        <span>Próximo evento</span>
-        <h3>Agenda ECLL 2026</h3>
-        <p>As próximas rodas, vivências, encontros e atividades serão publicadas aqui.</p>
-        <a href="#agenda">Acompanhar agenda →</a>
-      </div>
-    </section>
+<section class="section" id="galeria">
+  <div class="title center"><span>Memória visual</span><h2>Galeria</h2></div>
+  <div class="gallery">
+    <div class="big">Rodas e encontros</div><div>Eventos</div><div>História</div><div>Alunos e comunidade</div>
+  </div>
+</section>
 
-    <section class="secao fundo-claro" id="agenda">
-      <div class="titulo-secao">
-        <span class="rotulo">Programação</span>
-        <h2>Agenda</h2>
-      </div>
-      <div class="grade">
-        <article class="cartao">
-          <span class="data">2026</span>
-          <h3>Circuito Sankofa</h3>
-          <p>Vivências, rodas e atividades culturais.</p>
-        </article>
-        <article class="cartao">
-          <span class="data">EM BREVE</span>
-          <h3>Roda de Capoeira</h3>
-          <p>Data, horário e local serão adicionados.</p>
-        </article>
-        <article class="cartao">
-          <span class="data">EM BREVE</span>
-          <h3>Batizado e Graduação</h3>
-          <p>Informações oficiais serão publicadas aqui.</p>
-        </article>
-      </div>
-    </section>
+<section class="section darkrow" id="midia">
+  <div><span>Imprensa e acervo</span><h2>Na mídia</h2><p>Reportagens, entrevistas, vídeos e documentos sobre a trajetória da escola.</p></div>
+  <div class="note"><b>Acervo em construção</b><span>As primeiras reportagens serão adicionadas na próxima atualização.</span></div>
+</section>
 
-    <section class="secao" id="galeria">
-      <div class="titulo-secao">
-        <span class="rotulo">Memória visual</span>
-        <h2>Galeria</h2>
-      </div>
-      <div class="galeria">
-        <div>Rodas</div>
-        <div>Vivências</div>
-        <div>Batizados</div>
-        <div>História</div>
-      </div>
-    </section>
+<section class="section two contact" id="contato">
+  <div><span class="eyebrow">Entre em contato</span><h2>Faça parte</h2><p>Esta área receberá WhatsApp, Instagram, e-mail, horários das aulas e localização oficial.</p></div>
+  <div class="contactCard"><img src="images/logos/logo-preta.png" alt="Logo ECLL"><b>Escola de Capoeira Luta de Libertação</b><span>Manaus — Amazonas</span><span>Informações em atualização</span></div>
+</section>
+</main>
 
-    <section class="secao fundo-azul" id="midia">
-      <div>
-        <span class="rotulo">Imprensa e acervo</span>
-        <h2>Na mídia</h2>
-        <p>Reportagens, entrevistas, vídeos e registros sobre a atuação da Escola de Capoeira Luta de Libertação.</p>
-      </div>
-      <a class="botao botao-ouro" href="#contato">Enviar uma reportagem</a>
-    </section>
-
-    <section class="secao contato" id="contato">
-      <div>
-        <span class="rotulo">Entre em contato</span>
-        <h2>Faça parte</h2>
-        <p>Em breve, esta área terá WhatsApp, Instagram, e-mail, horários das aulas e mapa de localização.</p>
-      </div>
-      <div class="contato-box">
-        <strong>Escola de Capoeira Luta de Libertação</strong>
-        <span>Manaus — Amazonas</span>
-        <span>Contato oficial em atualização</span>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <strong>ECLL — Escola de Capoeira Luta de Libertação</strong>
-    <span>© 2026. Todos os direitos reservados.</span>
-  </footer>
-
-  <script src="js/main.js"></script>
+<footer>
+  <div class="footBrand"><img src="images/logos/logo-branca.png" alt="Logo ECLL"><div><b>Escola de Capoeira</b><span>Luta de Libertação</span></div></div>
+  <p>© 2026 ECLL. Todos os direitos reservados.</p>
+</footer>
+<script src="js/main.js"></script>
 </body>
 </html>

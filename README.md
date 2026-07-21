@@ -1,13 +1,3 @@
-# Portal ECLL
+# Portal ECLL v2
 
-Portal Oficial da Escola de Capoeira Luta de Libertação.
-
-## Estrutura
-
-- `index.html`: página principal
-- `css/style.css`: identidade visual e responsividade
-- `js/main.js`: menu para celulares
-
-## Identidade visual
-
-Azul Royal escuro, branco, amarelo ouro e preto.
+Versão com logo oficial, foto real no banner e identidade visual azul, branco, amarelo ouro e preto.

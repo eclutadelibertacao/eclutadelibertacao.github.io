@@ -1,14 +1,1 @@
-const botao = document.querySelector('.menu-botao');
-const menu = document.querySelector('.menu');
-
-botao.addEventListener('click', () => {
-  const aberto = menu.classList.toggle('aberto');
-  botao.setAttribute('aria-expanded', String(aberto));
-});
-
-document.querySelectorAll('.menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    menu.classList.remove('aberto');
-    botao.setAttribute('aria-expanded', 'false');
-  });
-});
+const b=document.getElementById('menuBtn'),m=document.getElementById('menu');b.onclick=()=>m.classList.toggle('open');document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
