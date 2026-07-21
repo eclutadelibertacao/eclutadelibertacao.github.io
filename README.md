@@ -1,9 +1,16 @@
-# Portal ECLL — Versão 3
+# Portal ECLL — Versão 0.4
 
-Atualizações desta versão:
+Portal Oficial da Escola de Capoeira Luta de Libertação.
 
-- Logo ampliada no cabeçalho, sem nenhuma alteração visual na arte.
-- Texto principal atualizado para:
-  “Ensino da Capoeira Tradicional Baiana, Angola e Regional”.
-- Cartão de informação rápida alterado de “Aulas” para “Ensino”.
-- Estrutura, cores, foto e demais elementos preservados.
+## Atualizações
+
+- Conteúdo institucional ampliado.
+- Inclusão de missão, visão, atividades e impacto social.
+- Reconhecimento como Ponto de Cultura.
+- Seção “Onde Treinamos” com três locais.
+- Dias e horários de treino.
+- Botões para o Google Maps.
+- Redes sociais oficiais.
+- Seção “Acompanhe a ECLL”.
+- Áreas iniciais de Notícias e Acervo.
+- Arquivo `CHANGELOG.md`.

@@ -1,100 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Portal Oficial da Escola de Capoeira Luta de Libertação.">
-<meta name="theme-color" content="#071f4a">
-<title>ECLL | Escola de Capoeira Luta de Libertação</title>
-<link rel="icon" href="images/logos/logo-principal.png">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal Oficial da Escola de Capoeira Luta de Libertação.">
+  <meta name="theme-color" content="#071F4A">
+  <title>ECLL | Escola de Capoeira Luta de Libertação</title>
+  <link rel="icon" href="images/logos/logo-principal.png">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-  <a class="brand" href="#inicio">
-    <img src="images/logos/logo-branca.png" alt="Logo ECLL">
-    <div><small>Escola de Capoeira</small><strong>Luta de Libertação</strong></div>
+<header class="topo">
+  <a class="marca" href="#inicio">
+    <img src="images/logos/logo-branca.png" alt="Logo da Escola de Capoeira Luta de Libertação">
   </a>
-  <button id="menuBtn" aria-label="Abrir menu">☰</button>
-  <nav id="menu">
-    <a href="#inicio">Início</a><a href="#escola">A Escola</a><a href="#agenda">Agenda</a>
-    <a href="#eventos">Eventos</a><a href="#galeria">Galeria</a><a href="#midia">Na mídia</a><a href="#contato">Contato</a>
+  <button class="menu-botao" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <nav class="menu">
+    <a href="#inicio">Início</a>
+    <a href="#escola">A Escola</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#noticias">Notícias</a>
+    <a href="#acervo">Acervo</a>
+    <a href="#contato">Contato</a>
   </nav>
-  <a class="join" href="#contato">Faça parte</a>
+  <a class="destaque-topo" href="#locais">Onde treinamos</a>
 </header>
 
 <main>
 <section class="hero" id="inicio">
-  <div class="shade"></div>
-  <div class="heroText">
-    <span>Escola de Capoeira</span>
-    <h1>Patrimônio.<b>Resistência.</b>Liberdade.</h1>
-    <p>Ensino da Capoeira Tradicional Baiana, Angola e Regional, formando crianças, jovens e adultos através da cultura, da disciplina, da educação e do respeito às tradições da capoeira.</p>
-    <div class="actions">
-      <a class="btn gold" href="#escola">Conheça nossa história</a>
-      <a class="btn outline" href="#agenda">Agenda de eventos</a>
+  <div class="hero-sombra"></div>
+  <div class="hero-conteudo">
+    <span class="sobrelinha">Escola de Capoeira</span>
+    <h1>Patrimônio.<strong>Resistência.</strong>Liberdade.</h1>
+    <p>Ensino da Capoeira Tradicional Baiana, Angola e Regional, formando crianças, jovens e adultos por meio da cultura, da disciplina, da educação e do respeito às tradições da capoeira.</p>
+    <div class="acoes">
+      <a class="botao ouro" href="#escola">Conheça nossa história</a>
+      <a class="botao contorno" href="#agenda">Agenda de eventos</a>
     </div>
   </div>
-  <div class="quick">
-    <div><small>Ensino</small><strong>Capoeira Tradicional Baiana, Angola e Regional</strong></div>
-    <div><small>Localização</small><strong>Manaus — Amazonas</strong></div>
-    <div><small>Contato</small><strong>WhatsApp oficial</strong></div>
-    <div><small>Redes sociais</small><strong>Instagram da ECLL</strong></div>
+
+  <div class="informacoes-rapidas">
+    <article><span>Ensino</span><strong>Capoeira Tradicional Baiana, Angola e Regional</strong></article>
+    <article><span>Onde treinamos</span><strong>3 locais em Manaus</strong></article>
+    <article><span>Fundação</span><strong>Desde 2007</strong></article>
+    <article><span>Reconhecimento</span><strong>Ponto de Cultura</strong></article>
   </div>
 </section>
 
-<section class="section" id="escola">
-  <div class="title"><span>Nossa identidade</span><h2>A Escola</h2></div>
-  <div class="two">
-    <div>
-      <p>A Escola de Capoeira Luta de Libertação é um espaço de formação, cultura, memória e convivência. Sua atuação reúne crianças, jovens e adultos em torno da prática da capoeira e dos valores que sustentam sua trajetória.</p>
-      <p>Este portal foi criado para preservar a história da escola, divulgar eventos, organizar o acervo e aproximar alunos, famílias, parceiros, pesquisadores e comunidade.</p>
-    </div>
-    <div class="values">
-      <article><b>Tradição</b><span>Memória e fundamentos.</span></article>
-      <article><b>Educação</b><span>Formação cidadã.</span></article>
-      <article><b>Comunidade</b><span>União e pertencimento.</span></article>
-      <article><b>Liberdade</b><span>Consciência e transformação.</span></article>
-    </div>
+<section class="secao" id="escola">
+  <div class="titulo">
+    <span>Identidade institucional</span>
+    <h2>A Escola</h2>
+  </div>
+
+  <div class="texto-institucional">
+    <p>Fundada em <strong>2007</strong> por <strong>Dermilson Brasil de Freitas, o Mestre Canário</strong>, a Escola de Capoeira Luta de Libertação nasceu com o propósito de preservar, ensinar e difundir a capoeira como expressão da cultura afro-brasileira e instrumento de transformação social.</p>
+    <p>Com sede em Manaus, Amazonas, a escola desenvolve suas atividades em diferentes regiões da cidade e atende aproximadamente <strong>100 alunos</strong>, entre crianças, adolescentes, adultos e pessoas da terceira idade.</p>
+    <p>A ECLL é reconhecida oficialmente como <strong>Ponto de Cultura pelo Ministério da Cultura</strong>.</p>
+  </div>
+
+  <div class="grade-institucional">
+    <article>
+      <h3>Missão</h3>
+      <p>Preservar e difundir a capoeira como patrimônio cultural imaterial, transmitindo valores ancestrais, fortalecendo o legado histórico afro-brasileiro e promovendo cidadania, disciplina, respeito e educação.</p>
+    </article>
+    <article>
+      <h3>Visão</h3>
+      <p>Ser um agente ativo de transformação social, utilizando a capoeira para combater a vulnerabilidade social, fortalecer as comunidades e ampliar oportunidades para crianças, jovens e adultos.</p>
+    </article>
+    <article>
+      <h3>O que fazemos</h3>
+      <p>Promovemos o ensino da Capoeira Tradicional Baiana, Angola e Regional, incluindo movimentos, esquivas, fundamentos, musicalidade, cantos tradicionais e prática de instrumentos.</p>
+    </article>
+    <article>
+      <h3>Impacto social</h3>
+      <p>Atuamos na inclusão de crianças e jovens, no fortalecimento da cultura afro-brasileira, na valorização da autoestima, no incentivo ao rendimento escolar e na preservação do ofício de mestre e da roda de capoeira.</p>
+    </article>
+  </div>
+
+  <div class="valores">
+    <article><strong>Tradição</strong><span>Memória, fundamentos e ancestralidade.</span></article>
+    <article><strong>Educação</strong><span>Disciplina, cidadania e formação humana.</span></article>
+    <article><strong>Comunidade</strong><span>Inclusão, convivência e pertencimento.</span></article>
+    <article><strong>Liberdade</strong><span>Consciência, expressão e transformação.</span></article>
   </div>
 </section>
 
-<section class="section light" id="agenda">
-  <div class="title center"><span>Programação</span><h2>Agenda</h2></div>
-  <div class="cards">
+<section class="secao clara" id="agenda">
+  <div class="titulo centralizado">
+    <span>Programação</span>
+    <h2>Agenda</h2>
+  </div>
+  <div class="cartoes">
     <article><em>Em breve</em><h3>Roda de Capoeira</h3><p>Data, horário e local serão atualizados nesta área.</p></article>
     <article><em>Em breve</em><h3>Vivência Cultural</h3><p>Atividades com convidados e integrantes da escola.</p></article>
     <article><em>Em breve</em><h3>Batizado e Graduação</h3><p>Informações oficiais e inscrições serão publicadas aqui.</p></article>
   </div>
 </section>
 
-<section class="section darkrow" id="eventos">
-  <div><span>Próximo destaque</span><h2>Eventos</h2><p>Cartazes, datas, horários, locais, convidados e registros de cada evento da ECLL.</p></div>
-  <a class="btn gold" href="#contato">Acompanhar novidades</a>
+<section class="secao escura" id="noticias">
+  <div>
+    <span class="sobrelinha">Atualizações da escola</span>
+    <h2>Notícias</h2>
+    <p>Eventos, homenagens, viagens, reportagens, projetos sociais, rodas, vivências e outras ações da ECLL serão publicadas nesta área.</p>
+  </div>
+  <a class="botao ouro" href="#redes">Acompanhar novidades</a>
 </section>
 
-<section class="section" id="galeria">
-  <div class="title center"><span>Memória visual</span><h2>Galeria</h2></div>
-  <div class="gallery">
-    <div class="big">Rodas e encontros</div><div>Eventos</div><div>História</div><div>Alunos e comunidade</div>
+<section class="secao" id="galeria">
+  <div class="titulo centralizado">
+    <span>Memória visual</span>
+    <h2>Galeria</h2>
+  </div>
+  <div class="galeria">
+    <div class="grande">Rodas e encontros</div>
+    <div>Eventos</div>
+    <div>História</div>
+    <div>Alunos e comunidade</div>
   </div>
 </section>
 
-<section class="section darkrow" id="midia">
-  <div><span>Imprensa e acervo</span><h2>Na mídia</h2><p>Reportagens, entrevistas, vídeos e documentos sobre a trajetória da escola.</p></div>
-  <div class="note"><b>Acervo em construção</b><span>As primeiras reportagens serão adicionadas na próxima atualização.</span></div>
+<section class="secao escura" id="acervo">
+  <div>
+    <span class="sobrelinha">Centro de memória</span>
+    <h2>Acervo</h2>
+    <p>Fotografias históricas, cartazes, convites, certificados, reportagens, vídeos, cantigas, instrumentos e documentos da trajetória da ECLL.</p>
+  </div>
+  <div class="aviso">
+    <strong>Acervo em construção</strong>
+    <span>Os primeiros materiais históricos serão adicionados nas próximas atualizações.</span>
+  </div>
 </section>
 
-<section class="section two contact" id="contato">
-  <div><span class="eyebrow">Entre em contato</span><h2>Faça parte</h2><p>Esta área receberá WhatsApp, Instagram, e-mail, horários das aulas e localização oficial.</p></div>
-  <div class="contactCard"><img src="images/logos/logo-preta.png" alt="Logo ECLL"><b>Escola de Capoeira Luta de Libertação</b><span>Manaus — Amazonas</span><span>Informações em atualização</span></div>
+<section class="secao clara" id="locais">
+  <div class="titulo centralizado">
+    <span>Manaus — Amazonas</span>
+    <h2>Onde Treinamos</h2>
+    <p class="introducao">A Escola de Capoeira Luta de Libertação está presente em diferentes regiões de Manaus. Escolha o local mais próximo e venha conhecer nossos treinos.</p>
+  </div>
+
+  <div class="locais">
+    <article class="local">
+      <span class="bairro">Cidade de Deus</span>
+      <h3>Centro Cultural Canto do Canário</h3>
+      <p><strong>Endereço:</strong> Rua Juticá, nº 280 – Cidade de Deus, Manaus – AM, CEP 69099-201.</p>
+      <p><strong>Responsável:</strong> Mestre Canário</p>
+      <div class="horarios">
+        <strong>Dias de Treino</strong>
+        <span>Terça-feira: 18h45 às 20h30</span>
+        <span>Quinta-feira: 18h45 às 20h30</span>
+        <span>Sábado: 9h às 11h</span>
+      </div>
+      <a href="https://maps.app.goo.gl/zCdAnzVda3SoQGLXA" target="_blank" rel="noopener noreferrer">Ver localização no Google Maps</a>
+    </article>
+
+    <article class="local">
+      <span class="bairro">Cidade Nova</span>
+      <h3>Chapéu de Zinco (Núcleo 16)</h3>
+      <p><strong>Endereço:</strong> Rua Cento e Noventa e Três, nº 249 – Conjunto Cidade Nova IV, Manaus – AM, CEP 69098-240.</p>
+      <p><strong>Responsável:</strong> Monitor Jhoy</p>
+      <div class="horarios">
+        <strong>Dias de Treino</strong>
+        <span>Terça-feira: 19h às 21h</span>
+        <span>Quinta-feira: 19h às 21h</span>
+        <span>Sábado: 15h às 17h</span>
+      </div>
+      <a href="https://maps.app.goo.gl/7P3UD7y3Qzs3XhZi9" target="_blank" rel="noopener noreferrer">Ver localização no Google Maps</a>
+    </article>
+
+    <article class="local">
+      <span class="bairro">Redenção</span>
+      <h3>Centro de Esporte e Lazer (CEL) Redenção</h3>
+      <p><strong>Endereço:</strong> Rua Olinda – Redenção, Manaus – AM, CEP 69047-501.</p>
+      <p><strong>Responsável:</strong> Contramestre Prateado</p>
+      <div class="horarios">
+        <strong>Dias de Treino</strong>
+        <span>Terça-feira: 18h30 às 20h</span>
+        <span>Quinta-feira: 18h30 às 20h</span>
+      </div>
+      <a href="https://maps.app.goo.gl/F3Eq98AeQMxJePmw8" target="_blank" rel="noopener noreferrer">Ver localização no Google Maps</a>
+    </article>
+  </div>
+</section>
+
+<section class="secao redes" id="redes">
+  <div class="titulo centralizado">
+    <span>Redes sociais oficiais</span>
+    <h2>Acompanhe a ECLL</h2>
+    <p class="introducao">Acompanhe nossas atividades, eventos, projetos e publicações pelas redes sociais oficiais da Escola de Capoeira Luta de Libertação.</p>
+  </div>
+  <div class="redes-cartoes">
+    <a href="https://www.facebook.com/share/g/1EBYcWxrP3/" target="_blank" rel="noopener noreferrer">
+      <strong>Facebook</strong>
+      <span>Participe do grupo e acompanhe a comunidade.</span>
+    </a>
+    <a href="https://www.instagram.com/lutalibertacao/" target="_blank" rel="noopener noreferrer">
+      <strong>Instagram</strong>
+      <span>@lutalibertacao — fotos, vídeos e novidades.</span>
+    </a>
+    <a href="https://www.youtube.com/@dermilson100" target="_blank" rel="noopener noreferrer">
+      <strong>YouTube</strong>
+      <span>Rodas, eventos e conteúdos audiovisuais.</span>
+    </a>
+  </div>
+</section>
+
+<section class="secao contato" id="contato">
+  <div>
+    <span class="sobrelinha">Entre em contato</span>
+    <h2>Faça parte</h2>
+    <p>Entre em contato com a ECLL e acompanhe nossos treinos, atividades, eventos e projetos.</p>
+  </div>
+  <div class="contato-cartao">
+    <img src="images/logos/logo-preta.png" alt="Logo preta da ECLL">
+    <strong>Escola de Capoeira Luta de Libertação</strong>
+    <span>Manaus — Amazonas</span>
+    <span>WhatsApp e e-mail serão adicionados em breve.</span>
+  </div>
 </section>
 </main>
 
 <footer>
-  <div class="footBrand"><img src="images/logos/logo-branca.png" alt="Logo ECLL"><div><b>Escola de Capoeira</b><span>Luta de Libertação</span></div></div>
+  <div class="rodape-marca">
+    <img src="images/logos/logo-branca.png" alt="Logo branca da ECLL">
+    <div><strong>Escola de Capoeira</strong><span>Luta de Libertação</span></div>
+  </div>
   <p>© 2026 ECLL. Todos os direitos reservados.</p>
 </footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>
