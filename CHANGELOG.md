@@ -1,5 +1,12 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.9 — Capas definidas pelo usuário
+
+- Aplicação da fotografia coletiva como capa da reportagem do Portal Em Tempo.
+- Aplicação da fotografia dos mestres como capa da reportagem do Jornal A Crítica.
+- Otimização das duas imagens para WebP.
+- Atualização da primeira notícia correspondente na Home.
+
 ## Versão 0.9 — Correção mobile e capas
 
 - Correção do estouro lateral no banner do próximo evento em celulares.
