@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eclutadelibertacao.github.io/sitemap.xml
