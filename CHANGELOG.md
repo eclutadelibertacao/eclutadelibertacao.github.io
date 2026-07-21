@@ -1,5 +1,14 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.9 — Cabeçalho e foto da Home
+
+- Redução da altura do cabeçalho azul-escuro.
+- Ajuste do espaço estrutural reservado à logo.
+- Aumento discreto das fontes do menu.
+- Restauração da fotografia principal da Home.
+- Novo enquadramento responsivo da roda de capoeira.
+- Consolidação de regras CSS conflitantes do cabeçalho e do banner.
+
 ## Versão 0.9 — Capas internas mais compactas
 
 - Redução do espaçamento vertical das capas internas.

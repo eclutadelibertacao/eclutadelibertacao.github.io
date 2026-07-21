@@ -991,37 +991,30 @@ html, body{
 
 /* Atualização: novo painel da Home, logo ampliada e seção Mestre Canário mais compacta */
 
-/* Nova fotografia principal da Home */
-.hero,
-.hero-home,
-.banner-principal,
-.capa-home{
-  --home-hero-image: url("../images/banner/home-roda-capoeira.jpg");
+/* Fotografia principal da Home */
+.hero{
+  background-image:url("../images/banner/home-roda-capoeira.jpg") !important;
+  background-size:cover !important;
+  background-position:52% 45% !important;
+  background-repeat:no-repeat !important;
 }
 
-.hero::before,
-.hero-home::before,
-.banner-principal::before,
-.capa-home::before{
-  background-image:
-    linear-gradient(90deg, rgba(4,20,48,.88) 0%, rgba(4,20,48,.60) 38%, rgba(4,20,48,.18) 68%, rgba(4,20,48,.08) 100%),
-    var(--home-hero-image) !important;
-  background-size: cover !important;
-  background-position: center 43% !important;
-  background-repeat: no-repeat !important;
+.hero-sombra{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,28,66,.96) 0%,
+      rgba(5,28,66,.82) 34%,
+      rgba(5,28,66,.42) 58%,
+      rgba(5,28,66,.12) 100%
+    ),
+    linear-gradient(0deg,rgba(7,31,74,.76),transparent 36%) !important;
 }
 
-/* Caso o banner use background diretamente na seção */
-.hero,
-.hero-home,
-.banner-principal,
-.capa-home{
-  background-image:
-    linear-gradient(90deg, rgba(4,20,48,.88) 0%, rgba(4,20,48,.60) 38%, rgba(4,20,48,.18) 68%, rgba(4,20,48,.08) 100%),
-    var(--home-hero-image) !important;
-  background-size: cover !important;
-  background-position: center 43% !important;
-  background-repeat: no-repeat !important;
+@media(max-width:700px){
+  .hero{
+    background-position:58% center !important;
+  }
 }
 
 /* Logo ECLL cerca de 50% maior, sem deformação */
@@ -1184,90 +1177,110 @@ header .container,
   }
 }
 
-/* Atualização específica do cabeçalho — ampliação estrutural da logo ECLL */
+/* Ajuste específico do cabeçalho e da Home */
 .topo{
-  grid-template-columns:190px minmax(0,1fr) auto !important;
-  min-height:196px !important;
-  height:196px !important;
-  gap:18px !important;
+  grid-template-columns:132px minmax(0,1fr) auto !important;
+  min-height:124px !important;
+  height:124px !important;
+  gap:22px !important;
+  padding-top:4px !important;
+  padding-bottom:4px !important;
   overflow:visible !important;
 }
 
 .marca{
-  width:190px !important;
-  min-width:190px !important;
-  max-width:none !important;
-  height:180px !important;
+  width:132px !important;
+  min-width:132px !important;
+  max-width:132px !important;
+  height:116px !important;
   display:flex !important;
   align-items:center !important;
   justify-content:flex-start !important;
-  flex:0 0 190px !important;
+  flex:0 0 132px !important;
   overflow:visible !important;
 }
 
 .marca img{
   width:auto !important;
-  height:180px !important;
-  max-width:190px !important;
-  max-height:none !important;
+  height:116px !important;
+  max-width:132px !important;
+  max-height:116px !important;
   aspect-ratio:auto !important;
   object-fit:contain !important;
   flex:0 0 auto !important;
 }
 
+.menu{
+  gap:22px !important;
+  white-space:nowrap;
+}
+
+.menu a{
+  font-size:13.2px !important;
+}
+
 .pagina-interna main{
-  padding-top:196px !important;
+  padding-top:124px !important;
 }
 
 @media(max-width:980px){
   .topo{
-    grid-template-columns:155px minmax(0,1fr) auto !important;
-    min-height:160px !important;
-    height:160px !important;
+    grid-template-columns:108px minmax(0,1fr) auto !important;
+    min-height:104px !important;
+    height:104px !important;
+    gap:16px !important;
   }
 
   .marca{
-    width:155px !important;
-    min-width:155px !important;
-    height:148px !important;
-    flex-basis:155px !important;
+    width:108px !important;
+    min-width:108px !important;
+    max-width:108px !important;
+    height:98px !important;
+    flex-basis:108px !important;
   }
 
   .marca img{
     width:auto !important;
-    height:148px !important;
-    max-width:155px !important;
+    height:98px !important;
+    max-width:108px !important;
+    max-height:98px !important;
   }
 
   .menu{
-    top:158px !important;
+    top:102px !important;
+  }
+
+  .menu a{
+    font-size:13px !important;
   }
 
   .pagina-interna main{
-    padding-top:160px !important;
+    padding-top:104px !important;
   }
 }
 
 @media(max-width:640px){
   .topo{
-    grid-template-columns:118px minmax(0,1fr) auto !important;
-    min-height:126px !important;
-    height:126px !important;
-    padding:6px 18px !important;
+    grid-template-columns:88px minmax(0,1fr) auto !important;
+    min-height:86px !important;
+    height:86px !important;
+    padding:3px 18px !important;
     gap:10px !important;
   }
 
   .marca{
-    width:118px !important;
-    min-width:118px !important;
-    height:114px !important;
-    flex-basis:118px !important;
+    width:88px !important;
+    min-width:88px !important;
+    max-width:88px !important;
+    height:80px !important;
+    flex-basis:88px !important;
   }
 
   .marca img{
     width:auto !important;
-    height:114px !important;
-    max-width:118px !important;
+    height:80px !important;
+    max-width:88px !important;
+    max-height:80px !important;
   }
 
   .menu-botao{
@@ -1277,14 +1290,13 @@ header .container,
   }
 
   .menu{
-    top:124px !important;
+    top:84px !important;
   }
 
   .pagina-interna main{
-    padding-top:126px !important;
+    padding-top:86px !important;
   }
 }
-
 
 @media(max-width:640px){
   .capa-interna{

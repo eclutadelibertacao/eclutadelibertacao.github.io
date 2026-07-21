@@ -1,9 +1,11 @@
 # Portal ECLL — Versão 0.9 revisada
 
-Ajuste visual das páginas internas:
+Ajustes realizados somente no cabeçalho e no painel principal da Home:
 
-- Redução da altura do painel de abertura.
-- Conteúdo limitado a uma largura mais equilibrada.
-- Título e texto redimensionados para evitar excesso de espaço vazio.
-- Ajuste responsivo específico para celular.
-- Cabeçalho, logo e demais conteúdos preservados.
+- Cabeçalho reduzido para uma altura mais compacta.
+- Logo preservada em tamanho destacado, sem deformação.
+- Fontes das abas do menu ampliadas discretamente.
+- Fotografia principal da Home restaurada.
+- Novo enquadramento para destacar o centro da roda.
+- Degradê mantido para preservar a leitura dos textos.
+- Regras conflitantes do cabeçalho e da imagem principal consolidadas.
