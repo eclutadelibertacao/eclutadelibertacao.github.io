@@ -39,62 +39,48 @@
 </section>
 
 
-<section class="destaque-proximo-evento" id="proximo-evento">
+
+<section class="destaque-proximo-evento" id="proximo-evento-automatico" aria-live="polite">
   <div class="evento-destaque-cartaz">
-    <img src="images/eventos/ii-circuito-sankofa.jpg" alt="Cartaz do II Circuito Sankofa">
+    <img id="evento-home-cartaz" src="" alt="">
   </div>
 
   <div class="evento-destaque-conteudo">
     <span class="evento-etiqueta">Próximo evento</span>
     <p class="evento-serie">Circuito Sankofa 2026</p>
-    <h2>II Circuito Sankofa</h2>
-    <h3>Mestre Gato</h3>
+    <h2 id="evento-home-titulo"></h2>
+    <h3 id="evento-home-convidado"></h3>
 
     <div class="evento-dados">
-      <div><span>Data</span><strong>1º de agosto de 2026</strong></div>
-      <div><span>Horário</span><strong>14h</strong></div>
-      <div><span>Local</span><strong>Centro Cultural Povos da Amazônia — CCPA</strong></div>
+      <div><span>Data</span><strong id="evento-home-data"></strong></div>
+      <div><span>Horário</span><strong id="evento-home-horario"></strong></div>
+      <div><span>Local</span><strong id="evento-home-local"></strong></div>
     </div>
 
-    <p class="evento-resumo">Encontro dedicado à implantação e à memória da capoeira no Amazonas, com Mestre Gato, oficina de toques de berimbau, batizado e troca de cordas da ECLL.</p>
+    <p class="evento-resumo" id="evento-home-resumo"></p>
+    <div class="contagem-regressiva" id="evento-home-contagem"></div>
 
     <div class="evento-acoes">
-      <a class="botao ouro" href="agenda.html#ii-circuito">Ver detalhes do evento</a>
-      <a class="botao evento-botao-cartaz" href="images/eventos/ii-circuito-sankofa.jpg" target="_blank" rel="noopener noreferrer">Ver cartaz completo</a>
+      <a class="botao ouro botao-inscricao-home" id="evento-home-inscricao" href="#" target="_blank" rel="noopener noreferrer">Inscreva-se aqui</a>
+      <a class="botao evento-botao-detalhes" id="evento-home-detalhes" href="agenda.html">Ver detalhes do evento</a>
+      <a class="botao evento-botao-cartaz" id="evento-home-ver-cartaz" href="#" target="_blank" rel="noopener noreferrer">Ver cartaz completo</a>
     </div>
   </div>
 </section>
 
-<section class="secao outros-eventos-home">
+<section class="secao outros-eventos-home" id="outros-eventos-confirmados">
   <div class="titulo centralizado">
     <span>Programação confirmada</span>
-    <h2>Próximos eventos</h2>
+    <h2>Outros eventos</h2>
   </div>
 
-  <div class="mini-eventos">
-    <a class="mini-evento" href="agenda.html#iii-circuito">
-      <img src="images/eventos/iii-circuito-sankofa.jpg" alt="Cartaz do III Circuito Sankofa">
-      <div>
-        <span>10 de outubro de 2026 · 16h</span>
-        <strong>III Circuito Sankofa</strong>
-        <p>Vivência com Mestre Chaguinha</p>
-      </div>
-    </a>
-
-    <a class="mini-evento" href="agenda.html#iv-circuito">
-      <img src="images/eventos/iv-circuito-sankofa.jpg" alt="Cartaz do IV Circuito Sankofa">
-      <div>
-        <span>5 de dezembro de 2026 · 14h</span>
-        <strong>IV Circuito Sankofa</strong>
-        <p>Mestre Eliberto Barroncas</p>
-      </div>
-    </a>
-  </div>
+  <div class="mini-eventos" id="mini-eventos-automaticos"></div>
 
   <div class="agenda-link-home">
     <a class="botao azul" href="agenda.html">Ver agenda completa</a>
   </div>
 </section>
+
 
 <section class="secao numeros-ecll" id="numeros">
   <article><strong>2007</strong><span>Ano de fundação</span></article>

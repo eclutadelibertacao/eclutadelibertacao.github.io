@@ -1,10 +1,12 @@
 # Portal ECLL — Versão 0.8 revisada
 
-Atualização da página inicial:
+Atualização do próximo evento:
 
-- Banner de grande destaque para o próximo evento.
-- II Circuito Sankofa exibido com cartaz, data, horário, local e resumo.
-- Botões para os detalhes do evento e para o cartaz completo.
-- III e IV Circuitos exibidos em cartões menores.
-- Botão de acesso à agenda completa.
-- Layout adaptado para computador, tablet e celular.
+- O banner principal de eventos escolhe automaticamente a próxima data.
+- Após o II Circuito, o III Circuito ocupará o destaque automaticamente.
+- Após o III Circuito, o IV Circuito será destacado.
+- Eventos futuros restantes aparecem nos cartões menores.
+- O botão “Inscreva-se aqui” aparece somente no evento que possui formulário.
+- O formulário atual pertence exclusivamente ao II Circuito Sankofa.
+- Após a realização do II Circuito, o botão de inscrição é ocultado automaticamente.
+- O mesmo botão foi incluído no II Circuito dentro da página Agenda.

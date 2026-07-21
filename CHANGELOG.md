@@ -1,5 +1,14 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.8 — Banner e inscrições automáticas
+
+- Banner da Home atualizado automaticamente conforme a data dos eventos.
+- Troca automática do II para o III e depois para o IV Circuito Sankofa.
+- Cartões menores preenchidos com os demais eventos futuros.
+- Inclusão do botão “Inscreva-se aqui” no II Circuito.
+- O botão de inscrição é ocultado após a realização do evento.
+- Formulários futuros só serão exibidos quando seus links forem cadastrados.
+
 ## Versão 0.8 — Eventos em destaque na Home
 
 - Inclusão de um banner dedicado ao próximo evento na página inicial.

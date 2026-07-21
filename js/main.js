@@ -195,3 +195,153 @@ document.addEventListener('keydown',(evento)=>{
   if(evento.key==='ArrowLeft') abrirFoto(indiceFoto-1);
   if(evento.key==='ArrowRight') abrirFoto(indiceFoto+1);
 });
+
+
+/* Banner automático de eventos — versão 0.8 */
+const eventosECLL = [
+  {
+    id: "i-circuito",
+    titulo: "I Circuito Sankofa",
+    convidado: "Mestre Francisco Lagarto",
+    dataISO: "2026-07-11T16:00:00-04:00",
+    dataTexto: "11 de julho de 2026",
+    horario: "16h",
+    local: "Centro Cultural Canto do Canário",
+    cartaz: "images/eventos/i-circuito-sankofa.jpg",
+    resumo: "Encontro dedicado à preservação da memória da capoeira no Amazonas.",
+    detalhes: "agenda.html#i-circuito",
+    inscricao: ""
+  },
+  {
+    id: "ii-circuito",
+    titulo: "II Circuito Sankofa",
+    convidado: "Mestre Gato",
+    dataISO: "2026-08-01T14:00:00-04:00",
+    dataTexto: "1º de agosto de 2026",
+    horario: "14h",
+    local: "Centro Cultural Povos da Amazônia — CCPA",
+    cartaz: "images/eventos/ii-circuito-sankofa.jpg",
+    resumo: "Encontro com Mestre Gato, oficina de toques de berimbau, batizado e troca de cordas da ECLL.",
+    detalhes: "agenda.html#ii-circuito",
+    inscricao: "https://forms.gle/57vF1AE1NyvCi7cn9"
+  },
+  {
+    id: "iii-circuito",
+    titulo: "III Circuito Sankofa",
+    convidado: "Vivência com Mestre Chaguinha",
+    dataISO: "2026-10-10T16:00:00-04:00",
+    dataTexto: "10 de outubro de 2026",
+    horario: "16h",
+    local: "Centro Cultural Canto do Canário",
+    cartaz: "images/eventos/iii-circuito-sankofa.jpg",
+    resumo: "Vivência dedicada à memória e à resistência da capoeira, com Mestre Chaguinha.",
+    detalhes: "agenda.html#iii-circuito",
+    inscricao: ""
+  },
+  {
+    id: "iv-circuito",
+    titulo: "IV Circuito Sankofa",
+    convidado: "Mestre Eliberto Barroncas",
+    dataISO: "2026-12-05T14:00:00-04:00",
+    dataTexto: "5 de dezembro de 2026",
+    horario: "14h",
+    local: "Centro Cultural Povos da Amazônia — CCPA",
+    cartaz: "images/eventos/iv-circuito-sankofa.jpg",
+    resumo: "Programação sobre musicalidade na capoeira, batizado e troca de cordas da ECLL.",
+    detalhes: "agenda.html#iv-circuito",
+    inscricao: ""
+  }
+];
+
+function obterEventosFuturos(){
+  const agora = new Date();
+  return eventosECLL
+    .filter(evento => new Date(evento.dataISO) >= agora)
+    .sort((a,b) => new Date(a.dataISO) - new Date(b.dataISO));
+}
+
+function preencherBannerAutomatico(){
+  const area = document.getElementById("proximo-evento-automatico");
+  if(!area) return;
+
+  const futuros = obterEventosFuturos();
+  const proximo = futuros[0];
+
+  if(!proximo){
+    area.innerHTML = `
+      <div class="evento-sem-programacao">
+        <span class="evento-etiqueta">Agenda</span>
+        <h2>Novos eventos em breve</h2>
+        <p>A programação será publicada assim que as próximas datas forem confirmadas.</p>
+        <a class="botao ouro" href="agenda.html">Ver agenda</a>
+      </div>`;
+    document.getElementById("outros-eventos-confirmados")?.remove();
+    return;
+  }
+
+  const cartaz = document.getElementById("evento-home-cartaz");
+  cartaz.src = proximo.cartaz;
+  cartaz.alt = `Cartaz do ${proximo.titulo}`;
+
+  document.getElementById("evento-home-titulo").textContent = proximo.titulo;
+  document.getElementById("evento-home-convidado").textContent = proximo.convidado;
+  document.getElementById("evento-home-data").textContent = proximo.dataTexto;
+  document.getElementById("evento-home-horario").textContent = proximo.horario;
+  document.getElementById("evento-home-local").textContent = proximo.local;
+  document.getElementById("evento-home-resumo").textContent = proximo.resumo;
+  document.getElementById("evento-home-contagem").textContent =
+    formatarContagem(new Date(proximo.dataISO));
+
+  const detalhes = document.getElementById("evento-home-detalhes");
+  detalhes.href = proximo.detalhes;
+
+  const verCartaz = document.getElementById("evento-home-ver-cartaz");
+  verCartaz.href = proximo.cartaz;
+
+  const inscricao = document.getElementById("evento-home-inscricao");
+  if(proximo.inscricao){
+    inscricao.href = proximo.inscricao;
+    inscricao.hidden = false;
+  }else{
+    inscricao.hidden = true;
+  }
+
+  const miniArea = document.getElementById("mini-eventos-automaticos");
+  const outros = futuros.slice(1);
+  if(!outros.length){
+    document.getElementById("outros-eventos-confirmados")?.remove();
+    return;
+  }
+
+  miniArea.innerHTML = outros.map(evento => `
+    <a class="mini-evento" href="${evento.detalhes}">
+      <img src="${evento.cartaz}" alt="Cartaz do ${evento.titulo}">
+      <div>
+        <span>${evento.dataTexto} · ${evento.horario}</span>
+        <strong>${evento.titulo}</strong>
+        <p>${evento.convidado}</p>
+      </div>
+    </a>
+  `).join("");
+}
+
+function controlarBotoesDeInscricaoNaAgenda(){
+  document.querySelectorAll(".agenda-evento[data-event-date]").forEach(evento => {
+    const botao = evento.querySelector(".botao-inscricao");
+    if(!botao) return;
+    const aindaVaiAcontecer = new Date(evento.dataset.eventDate) >= new Date();
+    botao.hidden = !aindaVaiAcontecer;
+  });
+}
+
+preencherBannerAutomatico();
+controlarBotoesDeInscricaoNaAgenda();
+
+setInterval(() => {
+  const futuros = obterEventosFuturos();
+  const proximo = futuros[0];
+  const contagem = document.getElementById("evento-home-contagem");
+  if(proximo && contagem){
+    contagem.textContent = formatarContagem(new Date(proximo.dataISO));
+  }
+}, 60000);
