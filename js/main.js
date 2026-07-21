@@ -37,3 +37,125 @@ if(slides.length){
   mostrarEvento(0);
   iniciarCarrossel();
 }
+
+function formatarContagem(dataEvento){
+  const agora=new Date();
+  const diferenca=dataEvento-agora;
+  if(diferenca<=0) return "";
+  const dias=Math.floor(diferenca/86400000);
+  const horas=Math.floor((diferenca%86400000)/3600000);
+  const minutos=Math.floor((diferenca%3600000)/60000);
+  if(dias>0) return `Faltam ${dias} dia${dias===1?"":"s"} e ${horas}h`;
+  if(horas>0) return `Faltam ${horas}h e ${minutos}min`;
+  return `Faltam ${Math.max(1,minutos)} minutos`;
+}
+
+function classificarEventosHome(){
+  const slidesHome=[...document.querySelectorAll('.evento-slide[data-event-date]')];
+  if(!slidesHome.length) return;
+  const agora=new Date();
+  const futuros=slidesHome
+    .map((slide,index)=>({slide,index,data:new Date(slide.dataset.eventDate)}))
+    .filter(item=>item.data>=agora)
+    .sort((a,b)=>a.data-b.data);
+  const proximo=futuros[0];
+
+  slidesHome.forEach((slide)=>{
+    const data=new Date(slide.dataset.eventDate);
+    const status=slide.querySelector('.status-evento');
+    const contagem=slide.querySelector('.contagem-regressiva');
+    slide.classList.toggle('realizado',data<agora);
+
+    if(data<agora){
+      status.textContent='Evento realizado';
+      status.className='status-evento realizado';
+      if(contagem) contagem.textContent='';
+    }else if(proximo && slide===proximo.slide){
+      status.textContent='Próximo evento';
+      status.className='status-evento proximo';
+      if(contagem) contagem.textContent=formatarContagem(data);
+    }else{
+      status.textContent='Evento futuro';
+      status.className='status-evento futuro';
+      if(contagem) contagem.textContent='';
+    }
+  });
+
+  if(proximo && typeof mostrarEvento==='function'){
+    mostrarEvento(proximo.index);
+    iniciarCarrossel();
+  }
+}
+
+function organizarAgenda(){
+  const eventos=[...document.querySelectorAll('.agenda-evento[data-event-date]')];
+  if(!eventos.length) return;
+
+  const agora=new Date();
+  const futuros=eventos
+    .filter(evento=>new Date(evento.dataset.eventDate)>=agora)
+    .sort((a,b)=>new Date(a.dataset.eventDate)-new Date(b.dataset.eventDate));
+  const realizados=eventos
+    .filter(evento=>new Date(evento.dataset.eventDate)<agora)
+    .sort((a,b)=>new Date(b.dataset.eventDate)-new Date(a.dataset.eventDate));
+
+  const listaFuturos=document.querySelector('.agenda-lista-futuros');
+  const listaRealizados=document.querySelector('.agenda-lista-realizados');
+  const destaque=document.getElementById('proximo-evento-destaque');
+
+  const proximo=futuros[0];
+
+  eventos.forEach((evento)=>{
+    const status=evento.querySelector('.status-evento');
+    const data=new Date(evento.dataset.eventDate);
+    if(data<agora){
+      status.textContent='Evento realizado';
+      status.className='status-evento realizado';
+    }else if(evento===proximo){
+      status.textContent='Próximo evento';
+      status.className='status-evento proximo';
+    }else{
+      status.textContent='Evento futuro';
+      status.className='status-evento futuro';
+    }
+  });
+
+  futuros.forEach((evento)=>listaFuturos?.appendChild(evento));
+  realizados.forEach((evento)=>listaRealizados?.appendChild(evento));
+
+  if(proximo && destaque){
+    const clone=proximo.cloneNode(true);
+    clone.className='proximo-destaque';
+    clone.removeAttribute('id');
+    const data=new Date(proximo.dataset.eventDate);
+    const conteudo=clone.querySelector('div:last-child');
+    if(conteudo){
+      const contagem=document.createElement('div');
+      contagem.className='contagem-regressiva';
+      contagem.textContent=formatarContagem(data);
+      conteudo.appendChild(contagem);
+    }
+    destaque.innerHTML='';
+    destaque.appendChild(clone);
+  }else if(destaque){
+    destaque.innerHTML='<div class="estado-vazio"><strong>Nenhum evento futuro cadastrado</strong><p>Novos eventos serão publicados assim que forem confirmados.</p></div>';
+  }
+}
+
+classificarEventosHome();
+organizarAgenda();
+setInterval(()=>{
+  document.querySelectorAll('.evento-slide[data-event-date] .contagem-regressiva').forEach((el)=>{
+    const slide=el.closest('.evento-slide');
+    const status=slide?.querySelector('.status-evento');
+    if(status?.classList.contains('proximo')){
+      el.textContent=formatarContagem(new Date(slide.dataset.eventDate));
+    }
+  });
+  const destaque=document.querySelector('.proximo-destaque');
+  if(destaque){
+    const dataStr=destaque.dataset.eventDate;
+    const contagem=destaque.querySelector('.contagem-regressiva');
+    if(dataStr && contagem) contagem.textContent=formatarContagem(new Date(dataStr));
+  }
+},60000);

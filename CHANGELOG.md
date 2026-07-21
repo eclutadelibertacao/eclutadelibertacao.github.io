@@ -1,5 +1,16 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.8 — Agenda inteligente
+
+- Destaque automático do próximo evento.
+- Ordenação cronológica dos eventos futuros.
+- Separação automática dos eventos realizados.
+- Carrossel iniciado pelo próximo evento.
+- Etiquetas de status: próximo, futuro e realizado.
+- Contagem regressiva para o próximo evento.
+- Atualização automática conforme a data atual.
+
+
 ## Versão 0.7 — Eventos e agenda
 
 - Inclusão de carrossel automático na página inicial.

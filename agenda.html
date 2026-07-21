@@ -25,16 +25,20 @@
   <p>Próximos eventos, encontros culturais e etapas do Circuito Sankofa.</p>
 </section>
 
-<section class="secao">
-  <div class="titulo centralizado">
-    <span>Próximos eventos</span>
-    <h2>Circuito Sankofa</h2>
-  </div>
+<section class="secao agenda-dinamica">
+  <div id="proximo-evento-destaque"></div>
+  <div class="agenda-grupo" id="eventos-futuros">
+    <div class="titulo centralizado">
+      <span>Programação</span>
+      <h2>Eventos Futuros</h2>
+    </div>
+    <div class="agenda-eventos agenda-lista-futuros">
 
-  <div class="agenda-eventos">
-    <article class="agenda-evento" id="i-circuito">
+
+    <article class="agenda-evento" id="i-circuito" data-event-date="2026-07-11T16:00:00-04:00">
       <img src="images/eventos/i-circuito-sankofa.jpg" alt="Cartaz do I Circuito Sankofa">
       <div>
+        <div class="status-evento"></div>
         <span>I Circuito Sankofa</span>
         <h3>Mestre Francisco Lagarto</h3>
         <p><strong>Data:</strong> 11 de julho de 2026</p>
@@ -44,9 +48,10 @@
       </div>
     </article>
 
-    <article class="agenda-evento" id="ii-circuito">
+    <article class="agenda-evento" id="ii-circuito" data-event-date="2026-08-01T14:00:00-04:00">
       <img src="images/eventos/ii-circuito-sankofa.jpg" alt="Cartaz do II Circuito Sankofa">
       <div>
+        <div class="status-evento"></div>
         <span>II Circuito Sankofa</span>
         <h3>Mestre Gato</h3>
         <p><strong>Data:</strong> 1º de agosto de 2026</p>
@@ -56,9 +61,10 @@
       </div>
     </article>
 
-    <article class="agenda-evento" id="iii-circuito">
+    <article class="agenda-evento" id="iii-circuito" data-event-date="2026-10-10T16:00:00-04:00">
       <img src="images/eventos/iii-circuito-sankofa.jpg" alt="Cartaz do III Circuito Sankofa">
       <div>
+        <div class="status-evento"></div>
         <span>III Circuito Sankofa</span>
         <h3>Vivência com Mestre Chaguinha</h3>
         <p><strong>Data:</strong> 10 de outubro de 2026</p>
@@ -68,9 +74,10 @@
       </div>
     </article>
 
-    <article class="agenda-evento" id="iv-circuito">
+    <article class="agenda-evento" id="iv-circuito" data-event-date="2026-12-05T14:00:00-04:00">
       <img src="images/eventos/iv-circuito-sankofa.jpg" alt="Cartaz do IV Circuito Sankofa">
       <div>
+        <div class="status-evento"></div>
         <span>IV Circuito Sankofa</span>
         <h3>Mestre Eliberto Barroncas</h3>
         <p><strong>Data:</strong> 5 de dezembro de 2026</p>
@@ -79,6 +86,15 @@
         <p>Programação sobre musicalidade na capoeira, com Mestre Eliberto Barroncas, batizado e troca de cordas da ECLL e atração musical Samba da Frente Unida.</p>
       </div>
     </article>
+    </div>
+  </div>
+
+  <div class="agenda-grupo" id="eventos-realizados">
+    <div class="titulo centralizado">
+      <span>Memória da agenda</span>
+      <h2>Eventos Realizados</h2>
+    </div>
+    <div class="agenda-eventos agenda-lista-realizados"></div>
   </div>
 </section>
 </main>
