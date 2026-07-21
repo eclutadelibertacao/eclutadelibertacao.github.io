@@ -1,3 +1,9 @@
-# Portal ECLL v2
+# Portal ECLL — Versão 3
 
-Versão com logo oficial, foto real no banner e identidade visual azul, branco, amarelo ouro e preto.
+Atualizações desta versão:
+
+- Logo ampliada no cabeçalho, sem nenhuma alteração visual na arte.
+- Texto principal atualizado para:
+  “Ensino da Capoeira Tradicional Baiana, Angola e Regional”.
+- Cartão de informação rápida alterado de “Aulas” para “Ensino”.
+- Estrutura, cores, foto e demais elementos preservados.
