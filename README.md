@@ -1,12 +1,12 @@
 # Portal ECLL — Versão 0.8 revisada
 
-Correções complementares:
+Atualizações incluídas:
 
-- Visualização no celular corrigida.
-- Cartões de informações rápidas não cobrem mais os botões do banner.
-- Banner com altura automática no celular.
-- Botões organizados em uma coluna.
-- Carrossel responsivo sem elementos sobrepostos.
-- Espaçamentos das páginas internas reduzidos no celular.
-- Logo ampliada no desktop, tablet e celular, sem alterar a arte.
-- Agenda inteligente mantida.
+- Agenda inteligente.
+- Correção da visualização no celular.
+- Logo ampliada.
+- Galeria do I Circuito Sankofa com 20 fotografias.
+- Fotos otimizadas em WebP para melhorar o carregamento.
+- Galeria responsiva em mosaico.
+- Visualização ampliada em tela cheia com setas e teclado.
+- Área preparada para receber o link público do álbum no Google Drive.

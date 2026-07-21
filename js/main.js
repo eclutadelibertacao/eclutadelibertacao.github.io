@@ -159,3 +159,39 @@ setInterval(()=>{
     if(dataStr && contagem) contagem.textContent=formatarContagem(new Date(dataStr));
   }
 },60000);
+
+const fotosGaleria=[...document.querySelectorAll('.foto-galeria')];
+const lightbox=document.querySelector('.lightbox');
+const imagemLightbox=lightbox?.querySelector('img');
+const legendaLightbox=lightbox?.querySelector('figcaption');
+let indiceFoto=0;
+
+function abrirFoto(indice){
+  if(!lightbox || !fotosGaleria.length) return;
+  indiceFoto=(indice+fotosGaleria.length)%fotosGaleria.length;
+  const botao=fotosGaleria[indiceFoto];
+  const imagem=botao.querySelector('img');
+  imagemLightbox.src=botao.dataset.full;
+  imagemLightbox.alt=imagem.alt;
+  legendaLightbox.textContent=`${indiceFoto+1} de ${fotosGaleria.length}`;
+  lightbox.classList.add('aberto');
+  lightbox.setAttribute('aria-hidden','false');
+  document.body.classList.add('lightbox-ativo');
+}
+function fecharFoto(){
+  if(!lightbox) return;
+  lightbox.classList.remove('aberto');
+  lightbox.setAttribute('aria-hidden','true');
+  document.body.classList.remove('lightbox-ativo');
+}
+fotosGaleria.forEach((foto,i)=>foto.addEventListener('click',()=>abrirFoto(i)));
+lightbox?.querySelector('.lightbox-fechar')?.addEventListener('click',fecharFoto);
+lightbox?.querySelector('.lightbox-anterior')?.addEventListener('click',()=>abrirFoto(indiceFoto-1));
+lightbox?.querySelector('.lightbox-proxima')?.addEventListener('click',()=>abrirFoto(indiceFoto+1));
+lightbox?.addEventListener('click',(evento)=>{if(evento.target===lightbox) fecharFoto();});
+document.addEventListener('keydown',(evento)=>{
+  if(!lightbox?.classList.contains('aberto')) return;
+  if(evento.key==='Escape') fecharFoto();
+  if(evento.key==='ArrowLeft') abrirFoto(indiceFoto-1);
+  if(evento.key==='ArrowRight') abrirFoto(indiceFoto+1);
+});

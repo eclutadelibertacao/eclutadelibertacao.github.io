@@ -349,3 +349,41 @@ footer{background:linear-gradient(135deg,var(--preto),var(--azul))}
     font-size:40px;
   }
 }
+
+/* Versão 0.8 — galeria do I Circuito Sankofa */
+.galeria-evento .titulo{margin-bottom:34px}
+.introducao-galeria{max-width:760px;margin-top:14px}
+.grade-fotos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:230px;gap:14px}
+.foto-galeria{padding:0;border:0;background:#e9edf3;border-radius:10px;overflow:hidden;cursor:pointer;box-shadow:var(--sombra);transition:transform .22s ease,box-shadow .22s ease}
+.foto-galeria:nth-child(1),.foto-galeria:nth-child(8),.foto-galeria:nth-child(19){grid-column:span 2;grid-row:span 2}
+.foto-galeria img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.foto-galeria:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(7,31,74,.18)}
+.foto-galeria:hover img{transform:scale(1.035)}
+.album-drive{margin-top:34px;padding:24px 28px;background:var(--azul);color:white;border-left:6px solid var(--ouro);border-radius:10px;display:flex;justify-content:space-between;gap:24px;align-items:center}
+.album-drive strong,.album-drive span{display:block}
+.album-drive strong{color:var(--ouro);font-size:18px;text-transform:uppercase}
+.album-drive-pendente{opacity:.88}
+.lightbox{position:fixed;inset:0;z-index:1000;background:rgba(2,8,18,.95);display:none;align-items:center;justify-content:center;padding:32px}
+.lightbox.aberto{display:flex}
+.lightbox figure{max-width:min(1100px,88vw);max-height:90vh;margin:0;text-align:center}
+.lightbox img{max-width:100%;max-height:82vh;object-fit:contain;border-radius:8px}
+.lightbox figcaption{color:white;margin-top:10px;font-size:13px}
+.lightbox-fechar,.lightbox-seta{position:absolute;border:0;background:rgba(255,255,255,.12);color:white;cursor:pointer;display:grid;place-items:center}
+.lightbox-fechar{top:18px;right:22px;width:46px;height:46px;border-radius:50%;font-size:32px}
+.lightbox-seta{top:50%;transform:translateY(-50%);width:50px;height:64px;border-radius:8px;font-size:38px}
+.lightbox-anterior{left:18px}.lightbox-proxima{right:18px}
+body.lightbox-ativo{overflow:hidden}
+@media(max-width:980px){
+  .grade-fotos{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:210px}
+  .foto-galeria:nth-child(1),.foto-galeria:nth-child(8),.foto-galeria:nth-child(19){grid-column:span 2}
+}
+@media(max-width:640px){
+  .grade-fotos{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:180px;gap:9px}
+  .foto-galeria:nth-child(1),.foto-galeria:nth-child(8),.foto-galeria:nth-child(19){grid-column:span 2;grid-row:span 2}
+  .lightbox{padding:18px}
+  .lightbox figure{max-width:100%;max-height:88vh}
+  .lightbox img{max-height:78vh}
+  .lightbox-seta{width:42px;height:54px}
+  .lightbox-anterior{left:5px}.lightbox-proxima{right:5px}
+  .album-drive{padding:20px}
+}

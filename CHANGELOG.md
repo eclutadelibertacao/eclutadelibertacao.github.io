@@ -1,5 +1,14 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.8 — Galeria do I Circuito Sankofa
+
+- Inclusão de 20 fotografias do I Circuito Sankofa.
+- Galeria responsiva em formato de mosaico.
+- Visualização em tela cheia com navegação por setas.
+- Compatibilidade com gestos e teclado.
+- Otimização das fotografias para WebP.
+- Área preparada para o álbum completo no Google Drive.
+
 ## Versão 0.8 — Correção mobile
 
 - Correção de elementos sobrepostos no banner pelo celular.
