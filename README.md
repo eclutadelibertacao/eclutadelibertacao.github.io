@@ -1,13 +1,13 @@
-# Portal ECLL — Versão 0.5
+# Portal ECLL — Versão 0.6
 
-O portal foi dividido em páginas independentes:
+Atualização visual e de experiência:
 
-- `index.html`
-- `escola.html`
-- `agenda.html`
-- `galeria.html`
-- `noticias.html`
-- `acervo.html`
-- `contato.html`
-
-Essa estrutura melhora a organização, a manutenção e o compartilhamento de links diretos.
+- Hero com entrada suave.
+- Efeito discreto de profundidade.
+- Indicador de rolagem.
+- Números institucionais na Home.
+- Linha do tempo na página A Escola.
+- Cartões com melhor espaçamento, sombras e interação.
+- Botões com animações suaves.
+- Rodapé com acabamento institucional.
+- Animações leves ao rolar a página.

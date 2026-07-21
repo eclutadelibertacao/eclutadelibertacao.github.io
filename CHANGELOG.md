@@ -1,5 +1,20 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.6 — Refinamento visual e experiência
+
+- Hero com entrada suave e efeito de profundidade.
+- Inclusão do indicador “Role para conhecer”.
+- Inclusão dos números institucionais:
+  - 2007 — Fundação;
+  - 100+ — Alunos;
+  - 3 — Locais de treino;
+  - Ponto de Cultura.
+- Criação de linha do tempo na página A Escola.
+- Cartões com sombras, cantos arredondados e animações.
+- Melhorias nos botões e no rodapé.
+- Animações discretas de entrada ao rolar as páginas.
+
+
 ## Versão 0.5 — Portal dividido em páginas
 
 - Separação da Home e das áreas institucionais.
