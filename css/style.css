@@ -824,3 +824,145 @@ body.lightbox-ativo{overflow:hidden}
     font-size:27px;
   }
 }
+
+/* Versão 0.9 — correção definitiva do banner de eventos no celular */
+html, body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+.destaque-proximo-evento,
+.evento-destaque-cartaz,
+.evento-destaque-conteudo,
+.evento-dados,
+.evento-dados div{
+  min-width:0;
+}
+
+.evento-destaque-conteudo h2,
+.evento-destaque-conteudo h3,
+.evento-dados strong,
+.evento-resumo{
+  max-width:100%;
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+
+@media(max-width:700px){
+  .destaque-proximo-evento{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+    gap:24px;
+    padding:38px 20px 42px;
+    overflow:hidden;
+  }
+
+  .evento-destaque-cartaz{
+    order:1;
+    width:100%;
+    max-width:310px;
+    margin:0 auto;
+  }
+
+  .evento-destaque-cartaz img{
+    display:block;
+    width:100%;
+    max-width:310px;
+    height:auto;
+    max-height:440px;
+    margin:0 auto;
+    object-fit:contain;
+  }
+
+  .evento-destaque-conteudo{
+    order:2;
+    width:100%;
+    max-width:100%;
+    margin:0;
+    text-align:left;
+    box-sizing:border-box;
+  }
+
+  .evento-etiqueta{
+    margin:0 0 10px;
+  }
+
+  .evento-serie{
+    margin-top:8px;
+    font-size:10px;
+    letter-spacing:1.4px;
+  }
+
+  .evento-destaque-conteudo h2{
+    width:100%;
+    margin:7px 0 5px;
+    font-size:clamp(34px,10.5vw,46px);
+    line-height:1;
+    text-align:left;
+    white-space:normal;
+  }
+
+  .evento-destaque-conteudo h3{
+    width:100%;
+    margin-bottom:17px;
+    font-size:27px;
+    line-height:1.1;
+    text-align:left;
+  }
+
+  .evento-dados{
+    width:100%;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin:16px 0;
+    text-align:left;
+  }
+
+  .evento-dados div,
+  .evento-dados div:last-child{
+    grid-column:auto;
+    width:100%;
+    box-sizing:border-box;
+    padding:13px 15px;
+  }
+
+  .evento-dados strong{
+    display:block;
+    font-size:14px;
+    line-height:1.35;
+  }
+
+  .evento-resumo{
+    width:100%;
+    margin:0;
+    font-size:15px;
+    line-height:1.55;
+    text-align:left;
+  }
+
+  .evento-acoes{
+    width:100%;
+    grid-template-columns:1fr;
+    margin-top:18px;
+  }
+
+  .evento-acoes .botao{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+
+  .contagem-regressiva{
+    width:100%;
+    box-sizing:border-box;
+  }
+}
+
+/* Capas das notícias com enquadramento fotográfico */
+.noticia-home-card img,
+.noticia-imagem img{
+  object-position:center;
+}

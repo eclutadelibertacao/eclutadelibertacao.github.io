@@ -1,11 +1,10 @@
-# Portal ECLL — Versão 0.9
+# Portal ECLL — Versão 0.9 revisada
 
-Atualizações:
+Correções incluídas:
 
-- Página Notícias transformada em feed cronológico.
-- Inclusão inicial de quatro reportagens e publicações.
-- Conteúdos novos serão adicionados no topo e os antigos permanecerão abaixo.
-- Home com três últimas notícias em cards compactos.
-- Banner do próximo evento reduzido para ocupar menos espaço.
-- Notícias sem identificação por categoria.
-- Links externos abrem em nova aba.
+- Banner do próximo evento corrigido para telas de celular.
+- Cartaz e conteúdo agora aparecem em uma única coluna, sem corte lateral.
+- Títulos, datas, local e botões respeitam a largura da tela.
+- Rolagem horizontal indesejada eliminada.
+- Capas das notícias substituídas por registros fotográficos do evento.
+- Página Notícias e três destaques da Home atualizados.

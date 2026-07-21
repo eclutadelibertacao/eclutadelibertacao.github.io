@@ -1,5 +1,13 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.9 — Correção mobile e capas
+
+- Correção do estouro lateral no banner do próximo evento em celulares.
+- Reorganização do banner em uma coluna no mobile.
+- Redução e centralização do cartaz em telas pequenas.
+- Ajuste de quebra de título, data, local e botões.
+- Substituição dos cartazes genéricos por fotografias nas capas das notícias.
+
 ## Versão 0.9 — Notícias e comunicação
 
 - Criação de feed cronológico na página Notícias.
