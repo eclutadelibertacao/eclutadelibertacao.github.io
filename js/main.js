@@ -1,0 +1,14 @@
+const botao = document.querySelector('.menu-botao');
+const menu = document.querySelector('.menu');
+
+botao.addEventListener('click', () => {
+  const aberto = menu.classList.toggle('aberto');
+  botao.setAttribute('aria-expanded', String(aberto));
+});
+
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('aberto');
+    botao.setAttribute('aria-expanded', 'false');
+  });
+});
