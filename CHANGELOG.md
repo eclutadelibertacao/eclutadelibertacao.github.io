@@ -1,5 +1,15 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.8 — Correção mobile
+
+- Correção de elementos sobrepostos no banner pelo celular.
+- Informações rápidas reposicionadas abaixo dos botões.
+- Banner com altura automática em telas pequenas.
+- Carrossel ajustado para não sobrepor conteúdos.
+- Botões do banner organizados verticalmente no celular.
+- Logo ampliada em todos os tamanhos de tela.
+- Agenda inteligente e destaque automático do próximo evento mantidos.
+
 ## Versão 0.8 — Agenda inteligente
 
 - Destaque automático do próximo evento.

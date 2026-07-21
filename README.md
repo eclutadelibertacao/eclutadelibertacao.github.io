@@ -1,11 +1,12 @@
-# Portal ECLL — Versão 0.8
+# Portal ECLL — Versão 0.8 revisada
 
-Atualização da agenda inteligente:
+Correções complementares:
 
-- O próximo evento aparece automaticamente em destaque.
-- Eventos futuros são ordenados por data.
-- Eventos realizados são movidos para uma seção própria.
-- O carrossel da Home abre no próximo evento.
-- Eventos concluídos recebem a etiqueta “Evento realizado”.
-- Contagem regressiva para o próximo evento.
-- A organização muda automaticamente conforme as datas passam.
+- Visualização no celular corrigida.
+- Cartões de informações rápidas não cobrem mais os botões do banner.
+- Banner com altura automática no celular.
+- Botões organizados em uma coluna.
+- Carrossel responsivo sem elementos sobrepostos.
+- Espaçamentos das páginas internas reduzidos no celular.
+- Logo ampliada no desktop, tablet e celular, sem alterar a arte.
+- Agenda inteligente mantida.
