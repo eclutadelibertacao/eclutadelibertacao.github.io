@@ -1,5 +1,15 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 6.0 — SEO e indexação
+
+- Preservação integral do layout, da estrutura visual, das cores e do conteúdo das páginas.
+- Títulos e descrições específicos para cada página.
+- Inclusão de URLs canônicas e diretivas de indexação.
+- Inclusão de metadados Open Graph e Twitter Cards para compartilhamento.
+- Inclusão de dados estruturados Schema.org para organização, site e páginas.
+- Revisão do sitemap e do robots.txt.
+- Preparação técnica para integração futura com o Google Analytics 4.
+
 ## Versão 0.9 — Cabeçalho e foto da Home
 
 - Redução da altura do cabeçalho azul-escuro.
