@@ -1,5 +1,15 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.5 — Portal dividido em páginas
+
+- Separação da Home e das áreas institucionais.
+- Criação das páginas A Escola, Agenda, Galeria, Notícias, Acervo e Contato.
+- Menu atualizado com links diretos.
+- Destaque visual da página ativa.
+- URLs independentes para facilitar o compartilhamento.
+- Manutenção futura mais simples.
+
+
 ## Versão 0.4 — Conteúdo institucional, locais e redes sociais
 
 - Consolidação das informações institucionais.
