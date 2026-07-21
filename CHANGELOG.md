@@ -1,5 +1,12 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.9 — Seção Mestre Canário
+
+- Inclusão da seção institucional do Mestre Canário.
+- Aplicação da foto tratada e otimizada.
+- Inclusão de texto biográfico inicial e informações básicas.
+- Estrutura preparada para futuras ampliações.
+
 ## Versão 0.9 — Capas definidas pelo usuário
 
 - Aplicação da fotografia coletiva como capa da reportagem do Portal Em Tempo.

@@ -966,3 +966,24 @@ html, body{
 .noticia-imagem img{
   object-position:center;
 }
+
+/* Seção Mestre Canário */
+.mestre-canario{background:linear-gradient(135deg,var(--azul),#0e2c63);color:white}
+.mestre-canario-grade{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:52px;align-items:center}
+.mestre-canario-foto{overflow:hidden;border-radius:16px;border:3px solid var(--ouro);box-shadow:0 26px 54px rgba(0,0,0,.28);background:#102c59}
+.mestre-canario-foto img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top}
+.mestre-canario .titulo span{color:var(--ouro)}
+.mestre-canario .titulo h2{color:white;margin-bottom:8px}
+.mestre-canario-subtitulo{color:var(--ouro);font-weight:800;font-size:18px}
+.mestre-canario-texto{display:grid;gap:14px;margin-top:24px}
+.mestre-canario-texto p{color:#eef3fb;font-size:16px;line-height:1.7}
+.mestre-canario-infos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}
+.mestre-canario-infos div{padding:15px 17px;border-left:4px solid var(--ouro);border-radius:8px;background:rgba(255,255,255,.08)}
+.mestre-canario-infos span,.mestre-canario-infos strong{display:block}
+.mestre-canario-infos span{margin-bottom:4px;color:var(--ouro);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:1.2px}
+.mestre-canario-infos strong{color:white;font-size:14px;line-height:1.35}
+.biografia-atualizacao{margin-top:24px;padding:17px 19px;border:1px solid rgba(243,180,0,.55);border-radius:9px;background:rgba(243,180,0,.08)}
+.biografia-atualizacao strong{display:block;color:var(--ouro);text-transform:uppercase;font-size:12px}
+.biografia-atualizacao p{margin-top:4px;color:#f4f6fa;font-size:14px}
+@media(max-width:850px){.mestre-canario-grade{grid-template-columns:1fr;gap:32px}.mestre-canario-foto{width:min(100%,430px);margin-inline:auto}}
+@media(max-width:600px){.mestre-canario-infos{grid-template-columns:1fr}.mestre-canario-subtitulo{font-size:16px}}
