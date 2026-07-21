@@ -12,3 +12,28 @@ observados.forEach((item)=>{
   item.classList.add('revelar');
   observador.observe(item);
 });
+
+const slides=[...document.querySelectorAll('.evento-slide')];
+const pontos=[...document.querySelectorAll('.carrossel-indicadores button')];
+const anterior=document.querySelector('.carrossel-seta.anterior');
+const proxima=document.querySelector('.carrossel-seta.proxima');
+let indiceEvento=0;
+let temporizadorEvento;
+
+function mostrarEvento(indice){
+  if(!slides.length) return;
+  indiceEvento=(indice+slides.length)%slides.length;
+  slides.forEach((slide,i)=>slide.classList.toggle('ativo',i===indiceEvento));
+  pontos.forEach((ponto,i)=>ponto.classList.toggle('ativo',i===indiceEvento));
+}
+function iniciarCarrossel(){
+  clearInterval(temporizadorEvento);
+  temporizadorEvento=setInterval(()=>mostrarEvento(indiceEvento+1),6000);
+}
+if(slides.length){
+  anterior?.addEventListener('click',()=>{mostrarEvento(indiceEvento-1);iniciarCarrossel();});
+  proxima?.addEventListener('click',()=>{mostrarEvento(indiceEvento+1);iniciarCarrossel();});
+  pontos.forEach((ponto,i)=>ponto.addEventListener('click',()=>{mostrarEvento(i);iniciarCarrossel();}));
+  mostrarEvento(0);
+  iniciarCarrossel();
+}

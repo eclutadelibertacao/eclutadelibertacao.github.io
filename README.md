@@ -1,13 +1,11 @@
-# Portal ECLL — Versão 0.6
+# Portal ECLL — Versão 0.7
 
-Atualização visual e de experiência:
+Principais atualizações:
 
-- Hero com entrada suave.
-- Efeito discreto de profundidade.
-- Indicador de rolagem.
-- Números institucionais na Home.
-- Linha do tempo na página A Escola.
-- Cartões com melhor espaçamento, sombras e interação.
-- Botões com animações suaves.
-- Rodapé com acabamento institucional.
-- Animações leves ao rolar a página.
+- Carrossel automático de próximos eventos na Home.
+- Cartazes dos quatro Circuitos Sankofa.
+- Linha visual do Projeto Sankofa 2026.
+- Página Agenda preenchida com os quatro eventos.
+- Logo ampliada no cabeçalho.
+- Área institucional mais compacta.
+- Redes sociais também na página inicial.

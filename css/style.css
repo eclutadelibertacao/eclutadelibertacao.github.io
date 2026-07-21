@@ -64,3 +64,68 @@ footer{background:linear-gradient(135deg,var(--preto),var(--azul))}
 
 .revelar{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .revelar.visivel{opacity:1;transform:none}
+
+/* Versão 0.7 — eventos, agenda e ajustes */
+.marca img{width:118px;height:118px}
+.topo{height:132px}
+.pagina-interna main{padding-top:132px}
+.menu{top:130px}
+.eventos-home{padding-top:72px}
+.carrossel-eventos{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:16px;max-width:1120px;margin:auto}
+.carrossel-trilho{position:relative;min-height:600px;overflow:hidden}
+.evento-slide{position:absolute;inset:0;display:grid;grid-template-columns:minmax(280px,430px) 1fr;gap:38px;align-items:center;opacity:0;transform:translateX(40px) scale(.98);pointer-events:none;transition:opacity .55s ease,transform .55s ease}
+.evento-slide.ativo{opacity:1;transform:none;pointer-events:auto}
+.evento-imagem{height:560px;display:flex;justify-content:center;align-items:center}
+.evento-imagem img{height:100%;width:auto;max-width:100%;object-fit:contain;border-radius:12px;box-shadow:0 22px 48px rgba(7,31,74,.22)}
+.evento-info>span{color:var(--royal);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:2px}
+.evento-info h3{color:var(--azul);font:400 42px/1.1 Georgia,serif;margin:8px 0 20px}
+.evento-info p+p{margin-top:6px}
+.evento-info .botao{margin-top:22px}
+.carrossel-seta{width:46px;height:46px;border-radius:50%;border:0;background:var(--azul);color:white;font-size:32px;cursor:pointer;transition:.2s}
+.carrossel-seta:hover{background:var(--royal);transform:scale(1.05)}
+.carrossel-indicadores{display:flex;justify-content:center;gap:9px;margin-top:22px}
+.carrossel-indicadores button{width:10px;height:10px;border-radius:50%;border:0;background:#c8cfda;cursor:pointer}
+.carrossel-indicadores button.ativo{background:var(--ouro);transform:scale(1.25)}
+.projeto-sankofa{padding-top:60px;padding-bottom:60px}
+.sankofa-linha{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:900px;margin:auto}
+.sankofa-linha:before{content:"";position:absolute;left:8%;right:8%;top:35px;height:3px;background:linear-gradient(90deg,var(--ouro),var(--royal))}
+.sankofa-linha a{position:relative;z-index:1;text-align:center}
+.sankofa-linha strong{width:70px;height:70px;border-radius:50%;margin:auto;display:grid;place-items:center;background:var(--azul);color:var(--ouro);font:400 28px Georgia,serif;border:4px solid white;box-shadow:0 0 0 3px var(--ouro)}
+.sankofa-linha span{display:block;margin-top:10px;font-weight:900;text-transform:uppercase;font-size:12px;color:var(--azul)}
+.secao-compacta{padding-top:54px;padding-bottom:54px}
+.secao-compacta .texto-institucional{margin-top:20px;margin-bottom:26px}
+.secao-compacta .grade-institucional{gap:14px;margin-bottom:18px}
+.secao-compacta .grade-institucional article{padding:20px}
+.secao-compacta .valores article{padding:18px}
+.redes-home{padding-top:64px;padding-bottom:64px}
+.agenda-eventos{display:flex;flex-direction:column;gap:34px}
+.agenda-evento{display:grid;grid-template-columns:260px 1fr;gap:30px;align-items:center;background:var(--claro);padding:24px;border-left:6px solid var(--ouro);border-radius:12px;box-shadow:var(--sombra)}
+.agenda-evento img{width:100%;max-height:360px;object-fit:contain;border-radius:8px;background:white}
+.agenda-evento span{color:var(--royal);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:2px}
+.agenda-evento h3{color:var(--azul);font:400 32px/1.1 Georgia,serif;margin:6px 0 14px}
+.agenda-evento p+p{margin-top:5px}
+@media(max-width:980px){
+  .marca img{width:92px;height:92px}
+  .topo{height:106px}
+  .pagina-interna main{padding-top:106px}
+  .menu{top:104px}
+  .evento-slide{grid-template-columns:1fr;gap:20px;text-align:center}
+  .carrossel-trilho{min-height:820px}
+  .evento-imagem{height:520px}
+  .evento-info .botao{display:inline-block}
+}
+@media(max-width:640px){
+  .marca img{width:78px;height:78px}
+  .topo{height:92px}
+  .pagina-interna main{padding-top:92px}
+  .menu{top:90px}
+  .carrossel-eventos{grid-template-columns:1fr}
+  .carrossel-seta{position:absolute;z-index:4;top:250px}
+  .carrossel-seta.anterior{left:6px}.carrossel-seta.proxima{right:6px}
+  .carrossel-trilho{min-height:790px}
+  .evento-imagem{height:470px}
+  .evento-info h3{font-size:32px}
+  .sankofa-linha{grid-template-columns:1fr 1fr;gap:28px}
+  .sankofa-linha:before{display:none}
+  .agenda-evento{grid-template-columns:1fr}
+}

@@ -1,5 +1,16 @@
 # Histórico de Atualizações — Portal ECLL
 
+## Versão 0.7 — Eventos e agenda
+
+- Inclusão de carrossel automático na página inicial.
+- Inclusão dos cartazes do I, II, III e IV Circuito Sankofa.
+- Criação da linha visual do Circuito Sankofa 2026.
+- Preenchimento da página Agenda com datas, horários, locais e descrições.
+- Aumento da logo no cabeçalho.
+- Redução dos espaços na parte institucional.
+- Inclusão das redes sociais na Home.
+
+
 ## Versão 0.6 — Refinamento visual e experiência
 
 - Hero com entrada suave e efeito de profundidade.
