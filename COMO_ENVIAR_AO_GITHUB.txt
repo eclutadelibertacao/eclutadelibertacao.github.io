@@ -1,0 +1,27 @@
+ECLL — 1º Batizado ECLL (2007) — pacote corrigido
+
+IMPORTANTE:
+Os arquivos e pastas deste ZIP devem ser colocados DIRETAMENTE na raiz do seu repositório.
+
+A estrutura correta no GitHub deve ficar assim:
+
+/
+├── acervo.html
+├── CHANGELOG.md
+├── acervo/
+│   └── batizado-01.html
+└── images/
+    └── acervo/
+        └── batizados/
+            └── batizado-01/
+                ├── capa.webp
+                ├── foto-01.webp
+                ├── ...
+                └── foto-13.webp
+
+NÃO crie uma pasta chamada "ECLL-V7..." dentro do repositório.
+
+Depois do commit, teste:
+https://eclutadelibertacao.github.io/acervo/batizado-01.html
+
+Se o navegador ainda mostrar versão antiga, use Ctrl+F5.
