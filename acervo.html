@@ -85,6 +85,84 @@
 .acervo-quadro-acao i{margin-left:7px;font-size:15px;font-style:normal;transition:transform .2s ease}
 .acervo-quadro:hover .acervo-quadro-acao i{transform:translateX(4px)}
 
+
+/* Pesquisa do Acervo de Batizados */
+.acervo-pesquisa{
+  position:relative;
+  display:flex;
+  align-items:center;
+  width:min(760px,100%);
+  margin:28px auto 10px;
+}
+.acervo-pesquisa input{
+  width:100%;
+  min-height:58px;
+  padding:0 54px 0 52px;
+  border:1px solid rgba(23,63,138,.20);
+  border-radius:14px;
+  background:#fff;
+  color:var(--azul);
+  font:inherit;
+  font-size:15px;
+  outline:none;
+  box-shadow:0 10px 28px rgba(7,31,74,.07);
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.acervo-pesquisa input::placeholder{color:#6f7888}
+.acervo-pesquisa input:focus{
+  border-color:var(--ouro);
+  box-shadow:0 12px 32px rgba(7,31,74,.10),0 0 0 3px rgba(243,180,0,.12);
+}
+.acervo-pesquisa-icone{
+  position:absolute;
+  left:18px;
+  z-index:1;
+  color:var(--ouro);
+  font-size:27px;
+  line-height:1;
+  pointer-events:none;
+  transform:rotate(-15deg);
+}
+.acervo-pesquisa button{
+  position:absolute;
+  right:12px;
+  width:36px;
+  height:36px;
+  border:0;
+  border-radius:50%;
+  background:rgba(7,31,74,.07);
+  color:var(--azul);
+  font-size:22px;
+  line-height:1;
+  cursor:pointer;
+}
+.acervo-pesquisa button:hover{background:rgba(243,180,0,.20)}
+.acervo-pesquisa-status{
+  min-height:21px;
+  margin:0 auto 34px;
+  text-align:center;
+  color:#687181;
+  font-size:12px;
+}
+.acervo-ano-bloco[hidden],
+.acervo-quadro[hidden]{display:none!important}
+.sr-only{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+@media(max-width:700px){
+  .acervo-pesquisa{margin-top:22px}
+  .acervo-pesquisa input{min-height:54px;font-size:14px}
+  .acervo-pesquisa-status{text-align:left;margin-bottom:26px}
+}
+
 /* Página individual do álbum: título limpo, fotos e acesso ao Drive. */
 .album-pagina{max-width:1180px;margin-inline:auto}
 .album-kicker{display:inline-flex!important;padding:5px 11px!important;border-radius:999px!important;background:var(--azul)!important;color:#fff!important;font-size:10px!important;letter-spacing:.5px!important}
@@ -143,13 +221,23 @@
     <div class="titulo acervo-batizados-titulo">
       <span>Memória histórica</span>
       <h2>Batizados</h2>
-      <p>Os batizados da ECLL organizados em ordem cronológica. Cada quadro abre um álbum com uma seleção de 20 fotografias e acesso ao registro completo no Google Drive.</p>
+      <p>Os batizados da ECLL organizados em ordem cronológica. Cada quadro abre um álbum com uma seleção de fotografias e acesso ao registro completo no Google Drive.</p>
     </div>
-    <div class="acervo-batizados-legenda" aria-label="Como funciona o acervo">
-      <span><b>01</b> Escolha um batizado</span>
-      <span><b>02</b> Veja as Fotos selecionadas</span>
-      <span><b>03</b> Acesse o álbum completo no Drive</span>
+
+    <div class="acervo-pesquisa" role="search">
+      <label class="sr-only" for="pesquisa-batizados">Pesquisar batizados</label>
+      <span class="acervo-pesquisa-icone" aria-hidden="true">⌕</span>
+      <input
+        id="pesquisa-batizados"
+        type="search"
+        inputmode="search"
+        autocomplete="off"
+        placeholder="Pesquisar por ano ou número do batizado..."
+        aria-describedby="pesquisa-batizados-status"
+      >
+      <button id="limpar-pesquisa-batizados" type="button" aria-label="Limpar pesquisa" hidden>×</button>
     </div>
+    <p id="pesquisa-batizados-status" class="acervo-pesquisa-status" aria-live="polite"></p>
     <div class="acervo-anos-lista">
     <section class="acervo-ano-bloco" aria-labelledby="ano-2007">
       <header class="acervo-ano-faixa">
@@ -157,19 +245,19 @@
         <p>O início dos registros de batizados da ECLL.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro acervo-quadro-primeiro" href="acervo/batizado-01.html" aria-label="Abrir 1º Batizado, 2007">
+        <a class="acervo-quadro acervo-quadro-primeiro" href="acervo/batizado-01.html" aria-label="Abrir 1º Batizado ECLL, 2007">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2007</span>
-            <div class="acervo-capa-identidade"><strong>1º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>1º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2007</span>
-              <strong>1º Batizado</strong>
+              <strong>1º Batizado ECLL</strong>
             </div>
             <p>O primeiro batizado da história da Escola de Capoeira Luta de Libertação.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -182,36 +270,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-02.html" aria-label="Abrir 2º Batizado, 2008">
+        <a class="acervo-quadro" href="acervo/batizado-02.html" aria-label="Abrir 2º Batizado ECLL, 2008">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2008</span>
-            <div class="acervo-capa-identidade"><strong>2º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>2º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2008</span>
-              <strong>2º Batizado</strong>
+              <strong>2º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-03.html" aria-label="Abrir 3º Batizado, 2008">
+        <a class="acervo-quadro" href="acervo/batizado-03.html" aria-label="Abrir 3º Batizado ECLL, 2008">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2008</span>
-            <div class="acervo-capa-identidade"><strong>3º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>3º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2008</span>
-              <strong>3º Batizado</strong>
+              <strong>3º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -224,36 +312,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-04.html" aria-label="Abrir 4º Batizado, 2009">
+        <a class="acervo-quadro" href="acervo/batizado-04.html" aria-label="Abrir 4º Batizado ECLL, 2009">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2009</span>
-            <div class="acervo-capa-identidade"><strong>4º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>4º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2009</span>
-              <strong>4º Batizado</strong>
+              <strong>4º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-05.html" aria-label="Abrir 5º Batizado, 2009">
+        <a class="acervo-quadro" href="acervo/batizado-05.html" aria-label="Abrir 5º Batizado ECLL, 2009">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2009</span>
-            <div class="acervo-capa-identidade"><strong>5º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>5º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2009</span>
-              <strong>5º Batizado</strong>
+              <strong>5º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -266,36 +354,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-06.html" aria-label="Abrir 6º Batizado, 2010">
+        <a class="acervo-quadro" href="acervo/batizado-06.html" aria-label="Abrir 6º Batizado ECLL, 2010">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2010</span>
-            <div class="acervo-capa-identidade"><strong>6º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>6º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2010</span>
-              <strong>6º Batizado</strong>
+              <strong>6º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-07.html" aria-label="Abrir 7º Batizado, 2010">
+        <a class="acervo-quadro" href="acervo/batizado-07.html" aria-label="Abrir 7º Batizado ECLL, 2010">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2010</span>
-            <div class="acervo-capa-identidade"><strong>7º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>7º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2010</span>
-              <strong>7º Batizado</strong>
+              <strong>7º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -308,36 +396,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-08.html" aria-label="Abrir 8º Batizado, 2011">
+        <a class="acervo-quadro" href="acervo/batizado-08.html" aria-label="Abrir 8º Batizado ECLL, 2011">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2011</span>
-            <div class="acervo-capa-identidade"><strong>8º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>8º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2011</span>
-              <strong>8º Batizado</strong>
+              <strong>8º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-09.html" aria-label="Abrir 9º Batizado, 2011">
+        <a class="acervo-quadro" href="acervo/batizado-09.html" aria-label="Abrir 9º Batizado ECLL, 2011">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2011</span>
-            <div class="acervo-capa-identidade"><strong>9º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>9º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2011</span>
-              <strong>9º Batizado</strong>
+              <strong>9º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -350,36 +438,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-10.html" aria-label="Abrir 10º Batizado, 2012">
+        <a class="acervo-quadro" href="acervo/batizado-10.html" aria-label="Abrir 10º Batizado ECLL, 2012">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2012</span>
-            <div class="acervo-capa-identidade"><strong>10º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>10º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2012</span>
-              <strong>10º Batizado</strong>
+              <strong>10º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-11.html" aria-label="Abrir 11º Batizado, 2012">
+        <a class="acervo-quadro" href="acervo/batizado-11.html" aria-label="Abrir 11º Batizado ECLL, 2012">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2012</span>
-            <div class="acervo-capa-identidade"><strong>11º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>11º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2012</span>
-              <strong>11º Batizado</strong>
+              <strong>11º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -392,36 +480,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-12.html" aria-label="Abrir 12º Batizado, 2013">
+        <a class="acervo-quadro" href="acervo/batizado-12.html" aria-label="Abrir 12º Batizado ECLL, 2013">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2013</span>
-            <div class="acervo-capa-identidade"><strong>12º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>12º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2013</span>
-              <strong>12º Batizado</strong>
+              <strong>12º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-13.html" aria-label="Abrir 13º Batizado, 2013">
+        <a class="acervo-quadro" href="acervo/batizado-13.html" aria-label="Abrir 13º Batizado ECLL, 2013">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2013</span>
-            <div class="acervo-capa-identidade"><strong>13º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>13º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2013</span>
-              <strong>13º Batizado</strong>
+              <strong>13º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -434,36 +522,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-14.html" aria-label="Abrir 14º Batizado, 2014">
+        <a class="acervo-quadro" href="acervo/batizado-14.html" aria-label="Abrir 14º Batizado ECLL, 2014">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2014</span>
-            <div class="acervo-capa-identidade"><strong>14º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>14º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2014</span>
-              <strong>14º Batizado</strong>
+              <strong>14º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-15.html" aria-label="Abrir 15º Batizado, 2014">
+        <a class="acervo-quadro" href="acervo/batizado-15.html" aria-label="Abrir 15º Batizado ECLL, 2014">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2014</span>
-            <div class="acervo-capa-identidade"><strong>15º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>15º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2014</span>
-              <strong>15º Batizado</strong>
+              <strong>15º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -476,36 +564,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-16.html" aria-label="Abrir 16º Batizado, 2015">
+        <a class="acervo-quadro" href="acervo/batizado-16.html" aria-label="Abrir 16º Batizado ECLL, 2015">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2015</span>
-            <div class="acervo-capa-identidade"><strong>16º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>16º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2015</span>
-              <strong>16º Batizado</strong>
+              <strong>16º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-17.html" aria-label="Abrir 17º Batizado, 2015">
+        <a class="acervo-quadro" href="acervo/batizado-17.html" aria-label="Abrir 17º Batizado ECLL, 2015">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2015</span>
-            <div class="acervo-capa-identidade"><strong>17º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>17º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2015</span>
-              <strong>17º Batizado</strong>
+              <strong>17º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -518,36 +606,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-18.html" aria-label="Abrir 18º Batizado, 2016">
+        <a class="acervo-quadro" href="acervo/batizado-18.html" aria-label="Abrir 18º Batizado ECLL, 2016">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2016</span>
-            <div class="acervo-capa-identidade"><strong>18º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>18º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2016</span>
-              <strong>18º Batizado</strong>
+              <strong>18º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-19.html" aria-label="Abrir 19º Batizado, 2016">
+        <a class="acervo-quadro" href="acervo/batizado-19.html" aria-label="Abrir 19º Batizado ECLL, 2016">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2016</span>
-            <div class="acervo-capa-identidade"><strong>19º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>19º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2016</span>
-              <strong>19º Batizado</strong>
+              <strong>19º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -560,36 +648,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-20.html" aria-label="Abrir 20º Batizado, 2017">
+        <a class="acervo-quadro" href="acervo/batizado-20.html" aria-label="Abrir 20º Batizado ECLL, 2017">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2017</span>
-            <div class="acervo-capa-identidade"><strong>20º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>20º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2017</span>
-              <strong>20º Batizado</strong>
+              <strong>20º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-21.html" aria-label="Abrir 21º Batizado, 2017">
+        <a class="acervo-quadro" href="acervo/batizado-21.html" aria-label="Abrir 21º Batizado ECLL, 2017">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2017</span>
-            <div class="acervo-capa-identidade"><strong>21º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>21º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2017</span>
-              <strong>21º Batizado</strong>
+              <strong>21º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -602,36 +690,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-22.html" aria-label="Abrir 22º Batizado, 2018">
+        <a class="acervo-quadro" href="acervo/batizado-22.html" aria-label="Abrir 22º Batizado ECLL, 2018">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2018</span>
-            <div class="acervo-capa-identidade"><strong>22º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>22º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2018</span>
-              <strong>22º Batizado</strong>
+              <strong>22º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-23.html" aria-label="Abrir 23º Batizado, 2018">
+        <a class="acervo-quadro" href="acervo/batizado-23.html" aria-label="Abrir 23º Batizado ECLL, 2018">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2018</span>
-            <div class="acervo-capa-identidade"><strong>23º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>23º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2018</span>
-              <strong>23º Batizado</strong>
+              <strong>23º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -644,36 +732,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-24.html" aria-label="Abrir 24º Batizado, 2019">
+        <a class="acervo-quadro" href="acervo/batizado-24.html" aria-label="Abrir 24º Batizado ECLL, 2019">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2019</span>
-            <div class="acervo-capa-identidade"><strong>24º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>24º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2019</span>
-              <strong>24º Batizado</strong>
+              <strong>24º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-25.html" aria-label="Abrir 25º Batizado, 2019">
+        <a class="acervo-quadro" href="acervo/batizado-25.html" aria-label="Abrir 25º Batizado ECLL, 2019">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2019</span>
-            <div class="acervo-capa-identidade"><strong>25º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>25º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2019</span>
-              <strong>25º Batizado</strong>
+              <strong>25º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -686,36 +774,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-26.html" aria-label="Abrir 26º Batizado, 2020">
+        <a class="acervo-quadro" href="acervo/batizado-26.html" aria-label="Abrir 26º Batizado ECLL, 2020">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2020</span>
-            <div class="acervo-capa-identidade"><strong>26º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>26º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2020</span>
-              <strong>26º Batizado</strong>
+              <strong>26º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-27.html" aria-label="Abrir 27º Batizado, 2020">
+        <a class="acervo-quadro" href="acervo/batizado-27.html" aria-label="Abrir 27º Batizado ECLL, 2020">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2020</span>
-            <div class="acervo-capa-identidade"><strong>27º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>27º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2020</span>
-              <strong>27º Batizado</strong>
+              <strong>27º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -728,36 +816,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-28.html" aria-label="Abrir 28º Batizado, 2021">
+        <a class="acervo-quadro" href="acervo/batizado-28.html" aria-label="Abrir 28º Batizado ECLL, 2021">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2021</span>
-            <div class="acervo-capa-identidade"><strong>28º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>28º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2021</span>
-              <strong>28º Batizado</strong>
+              <strong>28º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-29.html" aria-label="Abrir 29º Batizado, 2021">
+        <a class="acervo-quadro" href="acervo/batizado-29.html" aria-label="Abrir 29º Batizado ECLL, 2021">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2021</span>
-            <div class="acervo-capa-identidade"><strong>29º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>29º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2021</span>
-              <strong>29º Batizado</strong>
+              <strong>29º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -770,36 +858,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-30.html" aria-label="Abrir 30º Batizado, 2022">
+        <a class="acervo-quadro" href="acervo/batizado-30.html" aria-label="Abrir 30º Batizado ECLL, 2022">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2022</span>
-            <div class="acervo-capa-identidade"><strong>30º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>30º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2022</span>
-              <strong>30º Batizado</strong>
+              <strong>30º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-31.html" aria-label="Abrir 31º Batizado, 2022">
+        <a class="acervo-quadro" href="acervo/batizado-31.html" aria-label="Abrir 31º Batizado ECLL, 2022">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2022</span>
-            <div class="acervo-capa-identidade"><strong>31º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>31º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2022</span>
-              <strong>31º Batizado</strong>
+              <strong>31º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -812,36 +900,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-32.html" aria-label="Abrir 32º Batizado, 2023">
+        <a class="acervo-quadro" href="acervo/batizado-32.html" aria-label="Abrir 32º Batizado ECLL, 2023">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2023</span>
-            <div class="acervo-capa-identidade"><strong>32º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>32º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2023</span>
-              <strong>32º Batizado</strong>
+              <strong>32º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-33.html" aria-label="Abrir 33º Batizado, 2023">
+        <a class="acervo-quadro" href="acervo/batizado-33.html" aria-label="Abrir 33º Batizado ECLL, 2023">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2023</span>
-            <div class="acervo-capa-identidade"><strong>33º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>33º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2023</span>
-              <strong>33º Batizado</strong>
+              <strong>33º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -854,36 +942,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-34.html" aria-label="Abrir 34º Batizado, 2024">
+        <a class="acervo-quadro" href="acervo/batizado-34.html" aria-label="Abrir 34º Batizado ECLL, 2024">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2024</span>
-            <div class="acervo-capa-identidade"><strong>34º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>34º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2024</span>
-              <strong>34º Batizado</strong>
+              <strong>34º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-35.html" aria-label="Abrir 35º Batizado, 2024">
+        <a class="acervo-quadro" href="acervo/batizado-35.html" aria-label="Abrir 35º Batizado ECLL, 2024">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2024</span>
-            <div class="acervo-capa-identidade"><strong>35º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>35º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2024</span>
-              <strong>35º Batizado</strong>
+              <strong>35º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -896,36 +984,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-36.html" aria-label="Abrir 36º Batizado, 2025">
+        <a class="acervo-quadro" href="acervo/batizado-36.html" aria-label="Abrir 36º Batizado ECLL, 2025">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2025</span>
-            <div class="acervo-capa-identidade"><strong>36º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>36º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2025</span>
-              <strong>36º Batizado</strong>
+              <strong>36º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-37.html" aria-label="Abrir 37º Batizado, 2025">
+        <a class="acervo-quadro" href="acervo/batizado-37.html" aria-label="Abrir 37º Batizado ECLL, 2025">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2025</span>
-            <div class="acervo-capa-identidade"><strong>37º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>37º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2025</span>
-              <strong>37º Batizado</strong>
+              <strong>37º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -938,36 +1026,36 @@
         <p>Dois capítulos da memória da ECLL neste ano.</p>
       </header>
       <div class="acervo-quadros-grade">
-        <a class="acervo-quadro" href="acervo/batizado-38.html" aria-label="Abrir 38º Batizado, 2026">
+        <a class="acervo-quadro" href="acervo/batizado-38.html" aria-label="Abrir 38º Batizado ECLL, 2026">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2026</span>
-            <div class="acervo-capa-identidade"><strong>38º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>38º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2026</span>
-              <strong>38º Batizado</strong>
+              <strong>38º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
         </a>
-        <a class="acervo-quadro" href="acervo/batizado-39.html" aria-label="Abrir 39º Batizado, 2026">
+        <a class="acervo-quadro" href="acervo/batizado-39.html" aria-label="Abrir 39º Batizado ECLL, 2026">
           <div class="acervo-quadro-capa acervo-quadro-capa-vazia" aria-hidden="true">
             <span class="acervo-quadro-selo">2026</span>
-            <div class="acervo-capa-identidade"><strong>39º</strong><span>Batizado</span><small>Capa do álbum</small></div>
+            <div class="acervo-capa-identidade"><strong>39º</strong><span>Batizado ECLL</span><small>Capa do álbum</small></div>
           </div>
           <div class="acervo-quadro-conteudo">
             <div class="acervo-quadro-topo">
               <span class="acervo-quadro-ano">2026</span>
-              <strong>39º Batizado</strong>
+              <strong>39º Batizado ECLL</strong>
             </div>
             <p>Registro histórico do batizado, com uma seleção das melhores fotografias deste encontro.</p>
             <div class="acervo-quadro-rodape">
-              <span><b>20</b> fotos selecionadas</span>
+              <span>Fotos selecionadas</span>
               <span class="acervo-quadro-acao">Abrir álbum <i>→</i></span>
             </div>
           </div>
@@ -984,6 +1072,80 @@
   </div>
   <p>© 2026 ECLL. Todos os direitos reservados.</p>
 </footer>
+
+<script>
+(function () {
+  const input = document.getElementById('pesquisa-batizados');
+  const clearButton = document.getElementById('limpar-pesquisa-batizados');
+  const status = document.getElementById('pesquisa-batizados-status');
+  const yearBlocks = Array.from(document.querySelectorAll('.acervo-ano-bloco'));
+
+  if (!input || !yearBlocks.length) return;
+
+  function normalize(value) {
+    return value
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/º/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
+
+  function filterArchive() {
+    const raw = input.value.trim();
+    const query = normalize(raw);
+    const isYear = /^\d{4}$/.test(query);
+    let visibleAlbums = 0;
+    let visibleYears = 0;
+
+    yearBlocks.forEach((yearBlock) => {
+      const yearHeading = yearBlock.querySelector('.acervo-ano-faixa h3');
+      const year = yearHeading ? normalize(yearHeading.textContent) : '';
+      const cards = Array.from(yearBlock.querySelectorAll('.acervo-quadro'));
+      let blockMatches = false;
+
+      cards.forEach((card) => {
+        const cardText = normalize(card.textContent + ' ' + (card.getAttribute('aria-label') || ''));
+        const matches = !query || (isYear ? year === query : cardText.includes(query));
+        card.hidden = !matches;
+        if (matches) {
+          blockMatches = true;
+          visibleAlbums++;
+        }
+      });
+
+      yearBlock.hidden = !blockMatches;
+      if (blockMatches) visibleYears++;
+    });
+
+    clearButton.hidden = !raw;
+
+    if (!raw) {
+      status.textContent = '';
+    } else if (visibleAlbums === 0) {
+      status.textContent = 'Nenhum batizado encontrado para essa pesquisa.';
+    } else if (isYear) {
+      status.textContent = visibleAlbums === 1
+        ? '1 batizado encontrado em ' + raw + '.'
+        : visibleAlbums + ' batizados encontrados em ' + raw + '.';
+    } else {
+      status.textContent = visibleAlbums === 1
+        ? '1 batizado encontrado.'
+        : visibleAlbums + ' batizados encontrados.';
+    }
+  }
+
+  input.addEventListener('input', filterArchive);
+  input.addEventListener('search', filterArchive);
+  clearButton.addEventListener('click', function () {
+    input.value = '';
+    filterArchive();
+    input.focus();
+  });
+})();
+</script>
+
 <script src="js/main.js"></script>
 </body>
 </html>

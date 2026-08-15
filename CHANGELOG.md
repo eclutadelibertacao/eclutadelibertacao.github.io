@@ -203,3 +203,5 @@
 
 
 - Ajuste dos textos do Acervo de Batizados, removendo a quantidade fixa de fotografias e adotando a identificação “Fotos selecionadas”.
+
+- Acervo de Batizados: removidos os três quadros explicativos, adicionada pesquisa instantânea por ano ou número do batizado e padronizados os títulos no formato “Nº Batizado ECLL”.
