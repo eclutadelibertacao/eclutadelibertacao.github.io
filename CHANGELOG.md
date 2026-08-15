@@ -193,3 +193,11 @@
 - Criação do repositório.
 - Criação do `index.html`.
 - Criação dos arquivos CSS e JavaScript.
+## 2026-08-15 — Acervo de Batizados v3
+- Reformulação visual isolada da seção de Batizados em quadros horizontais, preservando o restante do portal.
+- Remoção do rótulo visual “Acervo histórico” dos álbuns; cada card exibe apenas o nome numerado do batizado e o ano como identificação auxiliar.
+- Preparação de capa à esquerda, descrição à direita, contador de fotos e botão “Abrir álbum”.
+- Páginas individuais mantêm 20 espaços para fotografias e acesso ao álbum completo no Google Drive.
+- Versionamento do `style.css` no HTML para reduzir problemas de cache no GitHub Pages.
+- Ajustes responsivos específicos para desktop, tablet e celular, sem alterar containers globais.
+
