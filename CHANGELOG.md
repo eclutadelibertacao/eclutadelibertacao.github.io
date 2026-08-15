@@ -209,3 +209,5 @@
 - Acervo: publicado o 1º Batizado ECLL (2007), com convite como capa, fotografias selecionadas otimizadas em WebP, lightbox, dados históricos do convite e acesso ao álbum completo no Google Drive.
 
 - Correção estrutural do Acervo: páginas dos 39 batizados movidas para `acervo/`, corrigindo os links 404; publicado o 1º Batizado ECLL (2007) com convite como capa, 13 fotografias selecionadas otimizadas em WebP, lightbox e link do Google Drive. Também foram padronizados os títulos dos álbuns e removidas referências visíveis a quantidade fixa de fotos.
+
+- Acervo: publicado o 3º Batizado ECLL (2008), com capa, 12 fotografias selecionadas otimizadas em WebP, data, local e link para o álbum completo no Google Drive.
