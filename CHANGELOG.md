@@ -207,3 +207,5 @@
 - Acervo de Batizados: removidos os três quadros explicativos, adicionada pesquisa instantânea por ano ou número do batizado e padronizados os títulos no formato “Nº Batizado ECLL”.
 
 - Acervo: publicado o 1º Batizado ECLL (2007), com convite como capa, fotografias selecionadas otimizadas em WebP, lightbox, dados históricos do convite e acesso ao álbum completo no Google Drive.
+
+- Correção estrutural do Acervo: páginas dos 39 batizados movidas para `acervo/`, corrigindo os links 404; publicado o 1º Batizado ECLL (2007) com convite como capa, 13 fotografias selecionadas otimizadas em WebP, lightbox e link do Google Drive. Também foram padronizados os títulos dos álbuns e removidas referências visíveis a quantidade fixa de fotos.
