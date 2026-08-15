@@ -1,8 +1,0 @@
-CORREÇÃO 4º BATIZADO ECLL
-
-Este pacote contém apenas:
-- acervo.html
-- acervo/batizado-04.html
-- images/acervo/batizados/batizado-04/ (capa + 20 fotos)
-
-Se usar o site do GitHub, ARRASTE as pastas acervo e images e o arquivo acervo.html para a área Upload files. Não use apenas o seletor de arquivos, porque ele pode não enviar as pastas.
