@@ -201,3 +201,5 @@
 - Versionamento do `style.css` no HTML para reduzir problemas de cache no GitHub Pages.
 - Ajustes responsivos específicos para desktop, tablet e celular, sem alterar containers globais.
 
+
+- Ajuste dos textos do Acervo de Batizados, removendo a quantidade fixa de fotografias e adotando a identificação “Fotos selecionadas”.
