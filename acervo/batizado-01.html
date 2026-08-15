@@ -158,6 +158,55 @@
 }
 
 </style>
+
+<style id="ecll-album-lightbox-style">
+.ecll-album-lightbox{
+  position:fixed; inset:0; z-index:9999; display:none;
+  align-items:center; justify-content:center;
+  background:rgba(0,0,0,.90); padding:24px;
+}
+.ecll-album-lightbox.ativo{display:flex}
+.ecll-album-lightbox img{
+  max-width:min(92vw,1400px); max-height:88vh; width:auto; height:auto;
+  object-fit:contain; border-radius:8px; box-shadow:0 18px 60px rgba(0,0,0,.45);
+}
+.ecll-album-lightbox-fechar,
+.ecll-album-lightbox-prev,
+.ecll-album-lightbox-next{
+  position:absolute; border:0; cursor:pointer; color:#fff;
+  background:rgba(255,255,255,.12); backdrop-filter:blur(5px);
+  display:grid; place-items:center; transition:background .2s ease;
+}
+.ecll-album-lightbox-fechar:hover,
+.ecll-album-lightbox-prev:hover,
+.ecll-album-lightbox-next:hover{background:rgba(255,255,255,.22)}
+.ecll-album-lightbox-fechar{
+  top:18px; right:18px; width:46px; height:46px; border-radius:50%;
+  font-size:30px; line-height:1;
+}
+.ecll-album-lightbox-prev,
+.ecll-album-lightbox-next{
+  top:50%; transform:translateY(-50%);
+  width:48px; height:64px; border-radius:10px; font-size:42px;
+}
+.ecll-album-lightbox-prev{left:18px}
+.ecll-album-lightbox-next{right:18px}
+.ecll-album-lightbox-contador{
+  position:absolute; left:50%; bottom:16px; transform:translateX(-50%);
+  padding:7px 12px; border-radius:999px; background:rgba(0,0,0,.45);
+  color:#fff; font-size:12px; font-weight:700;
+}
+body.ecll-lightbox-aberto{overflow:hidden}
+@media(max-width:700px){
+  .ecll-album-lightbox{padding:12px}
+  .ecll-album-lightbox-prev,.ecll-album-lightbox-next{
+    width:42px;height:54px;font-size:34px;
+  }
+  .ecll-album-lightbox-prev{left:8px}
+  .ecll-album-lightbox-next{right:8px}
+}
+</style>
+
 </head>
 <body class="pagina-interna">
 <header class="topo topo-solido">
@@ -232,5 +281,82 @@
 
 <footer><div class="rodape-marca"><img src="../images/logos/logo-branca.png" alt="Logo branca da ECLL"><div><strong>Escola de Capoeira</strong><span>Luta de Libertação</span></div></div><p>© 2026 ECLL. Todos os direitos reservados.</p></footer>
 <script src="../js/main.js"></script>
+
+<div id="ecll-album-lightbox" class="ecll-album-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Fotografia ampliada">
+  <button class="ecll-album-lightbox-fechar" type="button" aria-label="Fechar">×</button>
+  <button class="ecll-album-lightbox-prev" type="button" aria-label="Foto anterior">‹</button>
+  <img src="" alt="">
+  <button class="ecll-album-lightbox-next" type="button" aria-label="Próxima foto">›</button>
+  <div class="ecll-album-lightbox-contador" aria-live="polite"></div>
+</div>
+
+
+<script id="ecll-album-lightbox-script">
+(function(){
+  const items = Array.from(document.querySelectorAll('.album-foto-quadro'));
+  const box = document.getElementById('ecll-album-lightbox');
+  if (!items.length || !box) return;
+
+  const image = box.querySelector('img');
+  const closeBtn = box.querySelector('.ecll-album-lightbox-fechar');
+  const prevBtn = box.querySelector('.ecll-album-lightbox-prev');
+  const nextBtn = box.querySelector('.ecll-album-lightbox-next');
+  const counter = box.querySelector('.ecll-album-lightbox-contador');
+  let current = 0;
+
+  function sourceFor(item){
+    return item.getAttribute('data-full') ||
+      (item.querySelector('img') ? (item.querySelector('img').currentSrc || item.querySelector('img').src) : '');
+  }
+
+  function altFor(item){
+    const img = item.querySelector('img');
+    return img ? img.alt : 'Fotografia do acervo ECLL';
+  }
+
+  function show(index){
+    current = (index + items.length) % items.length;
+    const src = sourceFor(items[current]);
+    if (!src) return;
+    image.src = src;
+    image.alt = altFor(items[current]);
+    counter.textContent = (current + 1) + ' / ' + items.length;
+    box.classList.add('ativo');
+    box.setAttribute('aria-hidden','false');
+    document.body.classList.add('ecll-lightbox-aberto');
+    closeBtn.focus();
+  }
+
+  function close(){
+    box.classList.remove('ativo');
+    box.setAttribute('aria-hidden','true');
+    document.body.classList.remove('ecll-lightbox-aberto');
+    image.removeAttribute('src');
+  }
+
+  items.forEach((item, index) => {
+    item.addEventListener('click', function(e){
+      e.preventDefault();
+      show(index);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', () => show(current - 1));
+  nextBtn.addEventListener('click', () => show(current + 1));
+
+  box.addEventListener('click', function(e){
+    if (e.target === box) close();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (!box.classList.contains('ativo')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+})();
+</script>
+
 </body>
 </html>

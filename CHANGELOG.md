@@ -213,3 +213,5 @@
 - Acervo: publicado o 3º Batizado ECLL (2008), com capa, 12 fotografias selecionadas otimizadas em WebP, data, local e link para o álbum completo no Google Drive.
 
 - Acervo: publicado o 4º Batizado ECLL (2009), com capa, 20 fotografias selecionadas otimizadas em WebP, data, local e acesso ao álbum completo no Google Drive.
+
+- Padronização do lightbox em todos os álbuns de Batizados: clique para ampliar, navegação anterior/próxima, contador, suporte a teclado e comportamento responsivo.
